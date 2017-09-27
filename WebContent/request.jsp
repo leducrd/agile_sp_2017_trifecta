@@ -8,7 +8,7 @@
 	</head>
 	<body>
 	<h2>Request a Ride</h2>
-	<form method="post" action="AddPerson">
+	<form method="post" action="RideRequest">
 		<fieldset>
 			<label for="userID">*UserID:</label>
 			<br>
