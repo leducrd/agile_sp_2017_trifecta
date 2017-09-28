@@ -23,32 +23,33 @@
 			<fieldset>
 				<label for="firstName">*First Name:</label>
 				<br>
-
 				<input type="text" size="50" name="firstName" id="firstName" required="required">
 				<br>
 
 				<label for="lastName">*Last Name:</label>
 				<br>
-
 				<input type="text" size="50" name="lastName" id="lastName" required="required">
 				<br>
 
 				<label for="myEmail">*E-mail (example@domain.com):</label>
 				<br>
-
 				<input type="email" size="50" name="myEmail" id="myEmail" required="required">
 				<br>
 
 				<label for="number">*Phone Number (XXX-XXX-XXXX):</label>
 				<br>
-
 				<input type='tel' pattern="^\d{3}-\d{3}-\d{4}$"  title='Phone Number (Format: XXX-XXX-XXXX)' name="number" id="number" required="required">
 				<br>
-
-				<label for="preference">*Specific Preferences:</label>
+				
+				<label for="password">*Password:</label>
+				<br>
+				<input type='text' title='Password' name="password" id="password" required="required">
 				<br>
 
-				<textarea name="preference" id="preference" cols="20" rows="2"></textarea>				
+<!-- 				<label for="preference">*Specific Preferences:</label>
+				<br>
+
+				<textarea name="preference" id="preference" cols="20" rows="2"></textarea>		 -->		
 
 			</fieldset>
 
