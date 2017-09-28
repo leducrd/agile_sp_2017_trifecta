@@ -10,5 +10,7 @@
 			<input type="text" size="50" name="password" id="password" required="required">
 			<br>
 		</fieldset>
+		<input type="submit" name="submit" id="submit" value="Submit"><button id="register">Register</button>
 	</form>
+	
 </div>
