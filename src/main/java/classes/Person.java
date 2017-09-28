@@ -10,6 +10,7 @@ public class Person implements Serializable{
 	private String lastName;
 	private String phoneNumber;
 	private String email;
+	private String password;
 	 
 	
 	public Person(){
@@ -17,12 +18,13 @@ public class Person implements Serializable{
 	}
 
 
-	public Person(String firstName, String lastName, String phoneNumber, String email) {
+	public Person(String firstName, String lastName, String phoneNumber, String email, String password) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.phoneNumber = phoneNumber;
 		this.email = email;
+		this.password = password;
 	}
 
 
@@ -64,6 +66,15 @@ public class Person implements Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 
 	@Override
 	public String toString() {

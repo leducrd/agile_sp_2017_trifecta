@@ -32,16 +32,19 @@ public class AddPersonController extends HttpServlet {
 	    	  final String firstName = request.getParameter("firstName");
 	    	  final String phone = request.getParameter("number");
 	    	  final String email = request.getParameter("myEmail");
+	    	  final String password = request.getParameter("password");
+	    	  
 	    	  
 	    	  if(Strings.isNullOrEmpty(lastName) ||
 	    			  Strings.isNullOrEmpty(firstName) ||
 	    			  Strings.isNullOrEmpty(phone) ||
-	    			  Strings.isNullOrEmpty(email)){
+	    			  Strings.isNullOrEmpty(email) ||
+	    			  Strings.isNullOrEmpty(password)){
 	    		  request.setAttribute("message", "You must complete all fields to submit the form.");
 	    		  target = "error.jsp";
 	    	  }else{
 	    		  try{
-	    		  final Person person = new Person(firstName, lastName, phone, email);
+	    		  final Person person = new Person(firstName, lastName, phone, email, password);
 	    		  final PersonDao personDao = new PersonDaoImpl();
 	    		  
 	    		  personDao.insertPerson(person);
