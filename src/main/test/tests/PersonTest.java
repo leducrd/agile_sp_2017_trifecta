@@ -12,10 +12,11 @@ public class PersonTest {
 	@Test
 	public void personTest() {
 		
-			Person person1 = new Person("John","Johnson","715-555-5555","jjohnson@test.com");
+			Person person1 = new Person("John","Johnson","715-555-5555","jjohnson@test.com", "password123");
 			assertThat(person1.getFirstName(), is("John"));
 			assertThat(person1.getLastName(), is("Johnson"));
 			assertThat(person1.getPhoneNumber(), is("715-555-5555"));
 			assertThat(person1.getEmail(), is("jjohnson@test.com"));
+			assertThat(person1.getEmail(), is("password123"));
 		}
 }
