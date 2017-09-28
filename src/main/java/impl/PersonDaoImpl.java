@@ -11,7 +11,7 @@ import util.DBUtility;
 
 public class PersonDaoImpl implements PersonDao {
 	private static final String DROP_TABLE_PEOPLE = "DROP TABLE IF EXISTS people;";
-	private static final String CREATE_TABLE_PEOPLE = "CREATE TABLE people (userID integer primary key autoincrement, LName text, FName text, Phone text, Email text);";	
+	private static final String CREATE_TABLE_PEOPLE = "CREATE TABLE people (userID integer primary key autoincrement, LName text, FName text, Phone text, Email text, Password text);";	
 	
 	@Override
 	public void createDatabase() throws PersonDaoException {
