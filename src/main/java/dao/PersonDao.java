@@ -9,4 +9,5 @@ public interface PersonDao {
 	
 	void insertPerson(Person person) throws PersonDaoException;
 	
+	
 }
