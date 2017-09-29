@@ -22,7 +22,7 @@ public class PersonTest {
 			assertThat(person1.getLastName(), is("Johnson"));
 			assertThat(person1.getPhoneNumber(), is("715-555-5555"));
 			assertThat(person1.getEmail(), is("jjohnson@test.com"));
-			assertThat(person1.getEmail(), is("password123"));
+			assertThat(person1.getPassword(), is("password123"));
 	}
 	
 	@Test
