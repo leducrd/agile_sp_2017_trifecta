@@ -16,7 +16,7 @@ import util.DBUtility;
  * Servlet implementation class RideDaoImp
  */
 @WebServlet("/RideDaoImp")
-public class RideDaoImp extends HttpServlet {
+public class RideDaoImpl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private static final String DROP_TABLE_RIDEREQUEST = "DROP TABLE IF EXISTS rideRequest;";

@@ -8,8 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.PersonDao;
+import dao.RideDao;
 import impl.PersonDaoException;
 import impl.PersonDaoImpl;
+import impl.RideDaoException;
+import impl.RideDaoImpl;
 
 /**
  * Servlet implementation class PopulateRideDatabaseController

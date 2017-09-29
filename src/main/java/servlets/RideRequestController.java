@@ -12,9 +12,11 @@ import com.google.common.base.Strings;
 import classes.Person;
 import classes.Ride;
 import dao.PersonDao;
+import dao.RideDao;
 import impl.PersonDaoException;
 import impl.PersonDaoImpl;
 import impl.RideDaoException;
+import impl.RideDaoImpl;
 
 /**
  * Servlet implementation class RideRequestController
