@@ -3,9 +3,6 @@ package tests;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-import java.sql.Connection;
-import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
