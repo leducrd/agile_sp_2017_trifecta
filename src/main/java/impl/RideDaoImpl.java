@@ -5,17 +5,12 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-
 import classes.Ride;
-import dao.PersonDao;
 import dao.RideDao;
 import util.DBUtility;
 
 
 public class RideDaoImpl implements RideDao {
-	private static final long serialVersionUID = 1L;
 	
 	private static final String DROP_TABLE_RIDEREQUEST = "DROP TABLE IF EXISTS rideRequest;";
 	private static final String CREATE_TABLE_RIDEREQUEST = "CREATE TABLE rideRequest (rideID integer primary key autoincrement, userID integer, destination text, leave text, return text, event text, reason text);";
