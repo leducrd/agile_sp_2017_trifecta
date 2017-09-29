@@ -7,6 +7,6 @@ public interface RideDao {
 	
 	void createDatabase() throws RideDaoException;
 	
-	void insertPerson(Ride ride) throws RideDaoException;
+	void insertRide(Ride ride) throws RideDaoException;
 
 }

@@ -10,13 +10,11 @@ import javax.servlet.http.HttpServlet;
 
 import classes.Ride;
 import dao.PersonDao;
+import dao.RideDao;
 import util.DBUtility;
 
-/**
- * Servlet implementation class RideDaoImp
- */
-@WebServlet("/RideDaoImp")
-public class RideDaoImpl extends HttpServlet {
+
+public class RideDaoImpl implements RideDao {
 	private static final long serialVersionUID = 1L;
 	
 	private static final String DROP_TABLE_RIDEREQUEST = "DROP TABLE IF EXISTS rideRequest;";
