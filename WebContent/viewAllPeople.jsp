@@ -17,7 +17,7 @@
 		    <p>Sorry, there are no people listed</p>
 		  </c:when>
 		  <c:otherwise>
-		    <c:forEach var="people" items="${people}">
+		    <c:forEach var="person" items="${people}">
 		      <div class="span4">
 		        <h4>${person.firstName}, ${person.lastName}</h4>
 		        <p>Phone: ${person.phoneNumber}</p>
