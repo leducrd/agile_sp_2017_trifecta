@@ -9,15 +9,17 @@
 	</head>
 	<body>
 	
-		<h1>Cannot Log In</h1>
+		
 		<p>${message }</p>
 		
 		<c:choose>
 		  <c:when test="${empty people}">
-		    <p>Sorry, there are no people listed</p>
+		  	<h1>Error</h1>
+		    <p>Sorry, the login credentials you provided are incorrect.  Please try again or <a href="register.jsp">Sign Up</a></p>
 		  </c:when>
 		  <c:otherwise>
-		    <c:forEach var="people" items="${people}">
+		  <h1>Logged In</h1>
+		    <c:forEach var="person" items="${people}">
 		      <div class="span4">
 		        <h4>${person.firstName}, ${person.lastName}</h4>
 		        <p>Phone: ${person.phoneNumber}</p>
