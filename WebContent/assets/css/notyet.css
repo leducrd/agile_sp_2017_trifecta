@@ -1,9 +1,10 @@
 body {
 	font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
 }
+
 #wrapper {
 	
-	background-color: #a6c9ff;
+	background-color: #729CBF;
 	margin: 0 auto;
-	width: 50%;
+	width: 100%;
 }
