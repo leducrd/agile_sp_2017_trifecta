@@ -4,50 +4,56 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<title>Request a Ride</title>
+		<%@ include file="includes/stylesheets.jsp" %>
 	</head>
 	<body>
-	<h2>Request a Ride</h2>
-	<form method="post" action="RideRequest">
-		<fieldset>
-			<label for="userID">*UserID:</label>
-			<br>
-	
-			<input type="text" size="50" name="userID" id="userID" required="required">
-			<br>
-	
-			<label for="event">*Event:</label>
-			<br>
-	
-			<input type="text" size="50" name="event" id="event" required="required">
-			<br>
-	
-	
-			<label for="destination">*Destination:</label>
-			<br>
-	
-			<input type="text" size="50" name="destination" id="destination" required="required">
-			<br>
-	
-			<label for="leave">*Leave date and time:</label>
-			<br>
-			<input type="text"  title='leave' name="leave" id="leave" required="required">
-			<br>
-			
-			<label for="return">*Return date and time:</label>
-			<br>
-			<input type="text"  title='return' name="return" id="return" required="required">
-			<br>
-			
-			<label for="reason">*Reason for going:</label>
-			<br>
-	
-			<textarea name="reason" id="reason" cols="20" rows="2"></textarea>				
-	
-		</fieldset>
+		<nav class="navbar navbar-inverse">
+			<%@ include file="includes/navigation.jsp" %>	
+		</nav>
+		
+		<h2>Request a Ride</h2>
+		<form method="post" action="RideRequest">
+			<fieldset>
+				<label for="userID">*UserID:</label>
+				<br>
+		
+				<input type="text" size="50" name="userID" id="userID" required="required">
+				<br>
+		
+				<label for="event">*Event:</label>
+				<br>
+		
+				<input type="text" size="50" name="event" id="event" required="required">
+				<br>
+		
+		
+				<label for="destination">*Destination:</label>
+				<br>
+		
+				<input type="text" size="50" name="destination" id="destination" required="required">
+				<br>
+		
+				<label for="leave">*Leave date and time:</label>
+				<br>
+				<input type="text"  title='leave' name="leave" id="leave" required="required">
+				<br>
+				
+				<label for="return">*Return date and time:</label>
+				<br>
+				<input type="text"  title='return' name="return" id="return" required="required">
+				<br>
+				
+				<label for="reason">*Reason for going:</label>
+				<br>
+		
+				<textarea name="reason" id="reason" cols="20" rows="2"></textarea>				
+		
+			</fieldset>
 	
 		<input type="submit" name="submit" id="submit" value="Submit"> </form>
 		<br>
-	
+		<%@ include file="includes/scripts.jsp" %>
 	</body>
 </html>

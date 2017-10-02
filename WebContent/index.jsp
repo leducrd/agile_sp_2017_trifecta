@@ -1,53 +1,105 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html lang="en-US">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0"> 
-		<link href="assets/css/notyet.css" rel="stylesheet">
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajaxlibs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>NotYet-Home</title>
+		<%@ include file="includes/stylesheets.jsp" %>
 	</head>
-	<body>
+	<body id="wrapper">
 		<nav class="navbar navbar-inverse">
-			<div class="container-fluid">
-			
-				<!--  Logo -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a href="index.jsp" class="navbar-brand">Logo Here</a>
-				</div>
-				
-				<!-- Menu Items -->
-				<div class="collapse navbar-collapse" id="mainNavBar">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="index.jsp">Home</a></li>
-						<li><a href="register.jsp">Sign Up</a></li>
-						<li><a href="request.jsp">Request a Ride</a></li>
-					</ul>
-				</div>
-				
-			</div>	
+			<%@ include file="includes/navigation.jsp" %>	
 		</nav>
- 
-		<div id="wrapper">
+		
+		<div class="container">	 
+
 			<header>
-				<h1>Not Yet Carpool Service</h1>  
+				<h1 class="text-center">Not Yet Carpool Service</h1>  
 			</header>
-			<main>
-				<p>This is the home page</p>		
-			</main>
+			<%@ include file="includes/loginForm.jsp" %>
+			
+			<figure class="text-center">
+				<img class="figure-img img-fluid" src="assets/images/home-driver.jpg" alt="Driver Photo">
+			</figure>
+				
+			<section class="content">				
+ 				<h2>About Us</h2>
+ 					
+				<p>This is the reason we exist.  These are the problems that we are passionate
+				about solving. This is the unique and important information regarding our
+				carpool service and why you will want to utilize it. These are our strong points 
+				that we'd like to express. And these are our selling points, such as low rates, 
+				high safety, excellent ratings and the reasons behind them.</p>
+				
+				<p>We strive to be your car-pooling experts by connecting local commuters
+				and assisting in providing safe, convenient travel options. Based your pickup
+				and drop-off locations, we do our absolute best to find a solution so that you're able to 
+				 connect with others along a similar path.  Don't take our word for it. Get it
+				 straight from our user's testimonials below!</p>
+			</section>
+											
 		</div>
-		<footer> 
-			<small>Copyright &copy; 2017 Not Yet <a href="mailto:notyet@gmail.com">notyet@gmail.com</a>
-	          </small>
-	    </footer>
-	    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		<h2>Testimonials</h2>
+		
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12">
+					
+					<div id="testimonialSlider" class="carousel slide" data-ride="carousel">
+						
+						<!-- Indicators or "dot nav" -->
+						<ol class="carousel-indicators">
+							<li data-target="#testimonialSlider" data-slide-to="0" class="active"></li>
+							<li data-target="#testimonialSlider" data-slide-to="1"></li>
+							<!-- <li data-target="#testimonialSlider" data-slide-to="2"></li>-->
+						</ol>
+							
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner" role="listbox">
+							
+							<div class="item active">
+								<img src="assets/images/MarqueMark.jpg" alt="Marque Mark"/>
+								<div class="carousel-caption">
+											<p>"What a great idea! This is exactly what this area has been in need of for a number of
+					 						years now. I've personally cut the mileage on my car in half since I started using NotYet!"<br>-Marque Mark</p>
+								</div>
+							</div>
+								
+							<div class="item">
+								<img src="assets/images/DonJohn.jpg" alt="Don John"/>
+								<div class="carousel-caption">
+											<p>"This is just the most unbelievably wonderful organization I've ever worked with. And believe
+				 							 me, I've worked with more organizations than anyone alive! Great people!"<br>-Don John</p>
+								</div>
+							</div>
+								
+						</div>
+						
+						<!-- controls or next and prev buttons -->
+							
+						<a class="left carousel-control" href="#testimonialSlider" role="button" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+							
+						<a class="right carousel-control" href="#testimonialSlider" role="button" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+			
+		<footer class="footer text-right">
+			<%@ include file="includes/footer.jsp" %>	
+		</footer>
+	
+		<%@ include file="includes/scripts.jsp" %>
+		
 	</body>
+	
 </html>

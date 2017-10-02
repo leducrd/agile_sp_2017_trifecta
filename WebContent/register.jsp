@@ -4,57 +4,61 @@
 <html lang="en-US">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0"> 
-		<link href="assets/css/notyet.css" rel="stylesheet">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>Register Now</title>
+		<%@ include file="includes/stylesheets.jsp" %>
 	</head>
 	<body>
-<div id="wrapper">
+		<nav class="navbar navbar-inverse">
+			<%@ include file="includes/navigation.jsp" %>	
+		</nav>
+		
+		<div id="wrapper">
 
-	<header>
-		<h1>Not Yet Carpool Service</h1>  
-	</header>
+		<header>
+			<h1>Not Yet Carpool Service</h1>  
+		</header>
 
-	<main>
+		<main>
 	
-		<h2>Need a Lift?</h2>
-		<p>Fill out the form below. Required fields are marked with an asterisk *</p>
+			<h2>Need a Lift?</h2>
+			<p>Fill out the form below. Required fields are marked with an asterisk *</p>
 
-		<form method="post" action="AddPerson">
-			<fieldset>
-				<label for="firstName">*First Name:</label>
-				<br>
-				<input type="text" size="50" name="firstName" id="firstName" required="required">
-				<br>
-
-				<label for="lastName">*Last Name:</label>
-				<br>
-				<input type="text" size="50" name="lastName" id="lastName" required="required">
-				<br>
-
-				<label for="myEmail">*E-mail (example@domain.com):</label>
-				<br>
-				<input type="email" size="50" name="myEmail" id="myEmail" required="required">
-				<br>
-
-				<label for="number">*Phone Number (XXX-XXX-XXXX):</label>
-				<br>
-				<input type='tel' pattern="^\d{3}-\d{3}-\d{4}$"  title='Phone Number (Format: XXX-XXX-XXXX)' name="number" id="number" required="required">
-				<br>
-				
-				<label for="password">*Password:</label>
-				<br>
-				<input type='text' title='Password' name="password" id="password" required="required">
-				<br>
-
-<!-- 				<label for="preference">*Specific Preferences:</label>
-				<br>
-
-				<textarea name="preference" id="preference" cols="20" rows="2"></textarea>		 -->		
-
-			</fieldset>
+			<form method="post" action="AddPerson">
+				<fieldset>
+					<label for="firstName">*First Name:</label>
+					<br>
+					<input type="text" size="50" name="firstName" id="firstName" required="required">
+					<br>
+	
+					<label for="lastName">*Last Name:</label>
+					<br>
+					<input type="text" size="50" name="lastName" id="lastName" required="required">
+					<br>
+	
+					<label for="myEmail">*E-mail (example@domain.com):</label>
+					<br>
+					<input type="email" size="50" name="myEmail" id="myEmail" required="required">
+					<br>
+	
+					<label for="number">*Phone Number (XXX-XXX-XXXX):</label>
+					<br>
+					<input type='tel' pattern="^\d{3}-\d{3}-\d{4}$"  title='Phone Number (Format: XXX-XXX-XXXX)' name="number" id="number" required="required">
+					<br>
+					
+					<label for="password">*Password:</label>
+					<br>
+					<input type='text' title='Password' name="password" id="password" required="required">
+					<br>
+	
+	<!-- 				<label for="preference">*Specific Preferences:</label>
+					<br>
+	
+					<textarea name="preference" id="preference" cols="20" rows="2"></textarea>		 -->		
+	
+				</fieldset>
 
 			<input type="submit" name="submit" id="submit" value="Submit"> </form>
-
 			<br>
 
 			<div id="map" style="width:400px;height:400px;">
@@ -68,6 +72,6 @@
 	          Copyright &copy; 2017 Not Yet<br>
 	          <a href="mailto:notyet@gmail.com">notyet@gmail.com</a></small>
 	    </footer>
-	
+		<%@ include file="includes/scripts.jsp" %>
 	</body>
 </html>
