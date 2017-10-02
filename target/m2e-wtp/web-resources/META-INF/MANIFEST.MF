@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: wrongholt
 Build-Jdk: 1.8.0_121
+=======
+Built-By: netter
+Build-Jdk: 1.8.0_131
+>>>>>>> 45deebcef94494b86cda5f266ea0675902a661f5
 Created-By: Maven Integration for Eclipse
 
