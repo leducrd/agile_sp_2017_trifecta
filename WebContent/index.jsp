@@ -17,7 +17,8 @@
 				<h1>Not Yet Carpool Service</h1>  
 			</header>
 			<main>
-				<p>This is the home page</p>		
+				<p>This is the home page</p>	
+					
 			</main>
 		</div>
 		<footer> 
