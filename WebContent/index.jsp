@@ -38,9 +38,68 @@
 				 connect with others along a similar path.  Don't take our word for it. Get it
 				 straight from our user's testimonials below!</p>
 			</section>
- 				
+			
+			<h2>Testimonials</h2>
+			
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-12">
+					
+						<div id="testimonialSlider" class="carousel slide" data-ride="carousel">
+						
+							<!-- Indicators or "dot nav" -->
+							<ol class="carousel-indicators">
+								<li data-target="#testimonialSlider" data-slide-to="0" class="active"></li>
+								<li data-target="#testimonialSlider" data-slide-to="1"></li>
+								<!-- <li data-target="#testimonialSlider" data-slide-to="2"></li>-->
+							</ol>
+							
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner" role="listbox">
+							
+								<div class="item active">
+									<img src="assets/images/MarqueMark.jpg" alt="Marque Mark"/>
+									<div class="carousel-caption">
+											<blockquote>
+												<p>What a great idea! This is exactly what this area has been in need of for a number of
+					 							years now. I've personally cut the mileage on my car in half since I started using NotYet!</p>p>
+					 							<footer>Marque Mark</footer>
+					 						</blockquote>
+									</div>
+								</div>
+								
+								<div class="item">
+									<img src="assets/images/DonJohn.jpg" alt="Don John"/>
+									<div class="carousel-caption">
+											<blockquote>
+												<p>This is just the most unbelievably wonderful organization I've ever worked with. And believe
+				 								 me, I've worked with more organizations than anyone alive! Great people. Great people!</p>p>
+					 							<footer>Don John</footer>
+					 						</blockquote>
+									</div>
+								</div>
+								
+							</div>
+							<!-- controls or next and prev buttons -->
+							<a class="left carousel-control" href="#testimonialSlider" role="button" data-slide="prev">
+								<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							
+							<a class="right carousel-control" href="#testimonialSlider" role="button" data-slide="next">
+								<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							</a>
+						</div>
+					</div>
+				
+				</div>
+			
+			</div>
+			
+ 			<!--  	
 			<section class="content">	 
-				 <h2>Testimonials</h2>
+				 <h2>Testimonials</h2>git 
 				 
 				 <blockquote class="blockquote">
 				 What a great idea! This is exactly what this area has been in need of for a number of
@@ -59,7 +118,7 @@
 				 </blockquote>
 			 
 			</section>
-			
+			-->
 			<footer class="footer text-right">
 				<%@ include file="includes/footer.jsp" %>	
 			</footer>
