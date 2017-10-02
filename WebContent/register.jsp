@@ -48,7 +48,7 @@
 					
 					<label for="password">*Password:</label>
 					<br>
-					<input type='text' title='Password' name="password" id="password" required="required">
+					<input type='password' title='Password' name="password" id="password" required="required">
 					<br>
 	
 	<!-- 				<label for="preference">*Specific Preferences:</label>
