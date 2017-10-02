@@ -38,33 +38,65 @@
 				 connect with others along a similar path.  Don't take our word for it. Get it
 				 straight from our user's testimonials below!</p>
 			</section>
- 				
-			<section class="content">	 
-				 <h2>Testimonials</h2>
-				 
-				 <blockquote class="blockquote">
-				 What a great idea! This is exactly what this area has been in need of for a number of
-				 years now. I've personally cut the mileage on my car in half since I started using NotYet!
-				 <div class="blockquote-footer">
-				 	- Marque Mark
-				 </div>
-				 </blockquote>
-
-				 <blockquote class="blockquote">
-				 This is just the most unbelievably wonderful organization I've ever worked with. And believe
-				 me, I've worked with more organizations than anyone alive! Great people. Great people.
-				 <div class="blockquote-footer">
-				 	- Donny John
-				 </div>
-				 </blockquote>
-			 
-			</section>
-			
-			<footer class="footer text-right">
-				<%@ include file="includes/footer.jsp" %>	
-			</footer>
 											
-		</div><!-- content container (makes this page responsive) -->
+		</div>
+		<h2>Testimonials</h2>
+		
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12">
+					
+					<div id="testimonialSlider" class="carousel slide" data-ride="carousel">
+						
+						<!-- Indicators or "dot nav" -->
+						<ol class="carousel-indicators">
+							<li data-target="#testimonialSlider" data-slide-to="0" class="active"></li>
+							<li data-target="#testimonialSlider" data-slide-to="1"></li>
+							<!-- <li data-target="#testimonialSlider" data-slide-to="2"></li>-->
+						</ol>
+							
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner" role="listbox">
+							
+							<div class="item active">
+								<img src="assets/images/MarqueMark.jpg" alt="Marque Mark"/>
+								<div class="carousel-caption">
+											<p>"What a great idea! This is exactly what this area has been in need of for a number of
+					 						years now. I've personally cut the mileage on my car in half since I started using NotYet!"<br>-Marque Mark</p>
+								</div>
+							</div>
+								
+							<div class="item">
+								<img src="assets/images/DonJohn.jpg" alt="Don John"/>
+								<div class="carousel-caption">
+											<p>"This is just the most unbelievably wonderful organization I've ever worked with. And believe
+				 							 me, I've worked with more organizations than anyone alive! Great people!"<br>-Don John</p>
+								</div>
+							</div>
+								
+						</div>
+						
+						<!-- controls or next and prev buttons -->
+							
+						<a class="left carousel-control" href="#testimonialSlider" role="button" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+							
+						<a class="right carousel-control" href="#testimonialSlider" role="button" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+			
+		<footer class="footer text-right">
+			<%@ include file="includes/footer.jsp" %>	
+		</footer>
 	
 		<%@ include file="includes/scripts.jsp" %>
 		
