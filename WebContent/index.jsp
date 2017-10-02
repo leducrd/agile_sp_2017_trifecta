@@ -17,6 +17,7 @@
 			<header>
 				<h1 class="text-center">Not Yet Carpool Service</h1>  
 			</header>
+			<%@ include file="includes/loginForm.jsp" %>
 			
 			<figure class="text-center">
 				<img class="figure-img img-fluid" src="assets/images/home-driver.jpg" alt="Driver Photo">
