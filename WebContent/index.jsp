@@ -61,22 +61,16 @@
 							<div class="item active">
 								<img src="assets/images/MarqueMark.jpg" alt="Marque Mark"/>
 								<div class="carousel-caption">
-										<blockquote>
-											<p>What a great idea! This is exactly what this area has been in need of for a number of
-					 						years now. I've personally cut the mileage on my car in half since I started using NotYet!</p>
-					 						<footer>Marque Mark</footer>
-					 					</blockquote>
+											<p>"What a great idea! This is exactly what this area has been in need of for a number of
+					 						years now. I've personally cut the mileage on my car in half since I started using NotYet!"<br>-Marque Mark</p>
 								</div>
 							</div>
 								
 							<div class="item">
 								<img src="assets/images/DonJohn.jpg" alt="Don John"/>
 								<div class="carousel-caption">
-										<blockquote>
-											<p>This is just the most unbelievably wonderful organization I've ever worked with. And believe
-				 							 me, I've worked with more organizations than anyone alive! Great people!</p>
-					 						<footer>Don John</footer>
-					 					</blockquote>
+											<p>"This is just the most unbelievably wonderful organization I've ever worked with. And believe
+				 							 me, I've worked with more organizations than anyone alive! Great people!"<br>-Don John</p>
 								</div>
 							</div>
 								
