@@ -2,6 +2,7 @@ package servlets;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,38 +28,24 @@ public class LoginController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String target = null;
-		
-		boolean isUser = false;
-		final String userName = request.getParameter("loginEmail");
-		final String password = request.getParameter("password");
-		
-		final PersonDao personDao = new PersonDaoImpl();
-		List<Person> people;
-		
+				
 		try {
-			people = personDao.retrievePeople();
+			final String userName = request.getParameter("loginEmail");
+			final String password = request.getParameter("password");
+			final PersonDao personDao = new PersonDaoImpl();
+			final List<Person> people = personDao.retrievePeople();
 			
-			for (Person person : people) {
-				
-				if (person.getEmail() == userName) {
-					
-					isUser = true;
-					break;
-				}
-				
-			}
+			System.out.println(people);
+
+			final List<Person> exactPerson = people
+													.stream()
+													.filter((person) -> person.getEmail().equals(userName))
+													.filter((person) -> person.getPassword().equals(password))
+													.collect(Collectors.toList());
 			
-			if (isUser) {
-				request.setAttribute("message", "You have successfully logged in.");
-				
-				target = "success.jsp";
-			} else {
-				
-				request.setAttribute("message", "Sorry, either your username or password are incorrect");
-				request.setAttribute("people", people);
-				target = "viewAllPeople.jsp";
-				
-			}
+request.setAttribute("people", exactPerson);
+			
+			target = "viewAllPeople.jsp";
 			
 		} catch (PersonDaoException e) {
 			// TODO Auto-generated catch block
