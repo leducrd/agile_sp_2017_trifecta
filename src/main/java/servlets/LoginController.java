@@ -35,7 +35,6 @@ public class LoginController extends HttpServlet {
 			final PersonDao personDao = new PersonDaoImpl();
 			final List<Person> people = personDao.retrievePeople();
 			
-			System.out.println(people);
 
 			final List<Person> exactPerson = people
 													.stream()
