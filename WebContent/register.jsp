@@ -8,7 +8,7 @@
 		<title>Register Now</title>
 		<%@ include file="includes/stylesheets.jsp" %>
 	</head>
-	<body>
+	<body id="wrapper">
 		<nav class="navbar navbar-inverse">
 			<%@ include file="includes/navigation.jsp" %>	
 		</nav>
