@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 import classes.Ride;
 import dao.RideDao;
@@ -72,5 +73,11 @@ public class RideDaoImpl implements RideDao {
 			DBUtility.closeConnection(connection, insertStatement);
 		}
 		
+	}
+
+	@Override
+	public List<Ride> retrieveRide() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
