@@ -44,7 +44,7 @@
 		
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-sm-12">
+				<div class="col-xs-12">
 					
 					<div id="testimonialSlider" class="carousel slide" data-ride="carousel">
 						
@@ -59,7 +59,7 @@
 						<div class="carousel-inner" role="listbox">
 							
 							<div class="item active">
-								<img src="assets/images/MarqueMark.jpg" alt="Marque Mark"/>
+								<img src="assets/images/MarqueMark.jpg" alt="Marque Mark" class="img-center"/>
 								<div class="carousel-caption">
 											<p>"What a great idea! This is exactly what this area has been in need of for a number of
 					 						years now. I've personally cut the mileage on my car in half since I started using NotYet!"<br>-Marque Mark</p>

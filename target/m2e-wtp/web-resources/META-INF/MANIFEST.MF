@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: Denver
 Build-Jdk: 1.8.0_121
+=======
+Built-By: zschullo
+Build-Jdk: 1.8.0_144
+>>>>>>> d75ad8647f3acf4fdabb7adba231bb6e83c36305
 Created-By: Maven Integration for Eclipse
 
