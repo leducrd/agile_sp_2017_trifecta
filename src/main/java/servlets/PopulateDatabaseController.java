@@ -9,8 +9,11 @@ import javax.servlet.http.HttpServletResponse;
 
 
 import dao.PersonDao;
+import dao.RideDao;
 import impl.PersonDaoException;
 import impl.PersonDaoImpl;
+import impl.RideDaoException;
+import impl.RideDaoImpl;
 
 /**
  * Servlet implementation class PopulateDatabaseController
@@ -29,13 +32,15 @@ String target = null;
 		try {
 			
 			final PersonDao personDao = new PersonDaoImpl();
+			final RideDao rideDao = new RideDaoImpl();
 			
 			personDao.createDatabase();
+			rideDao.createDatabase();
 			
 			request.setAttribute("message", "You may see an error page, but really you were successful in populating the database.");
 			
 			target = "error.jsp";
-		} catch (PersonDaoException e) {
+		} catch (PersonDaoException | RideDaoException e) {
 			
 			e.printStackTrace();
 			request.setAttribute("message", "You weren't able to populate the database.");
