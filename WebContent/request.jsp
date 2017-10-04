@@ -14,6 +14,7 @@
 		</nav>
 		<main class="container">
 			<h2>Request a Ride</h2>
+			<p>Fill out the form below. Required fields are marked with an asterisk *</p>
 			<form method="post" action="RideRequest">
 				<fieldset>
 					<label for="userID">*UserID:</label>
