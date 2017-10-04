@@ -49,7 +49,7 @@ public class RideDaoImpl implements RideDao {
 			
 			connection = DBUtility.createConnection();
 			
-			final String sqlStatement = "";
+			final String sqlStatement = "INSERT INTO rideRequest (event, destination, leave, return, reason) values (?,?,?,?,?);";
 			
 			insertStatement = connection.prepareStatement(sqlStatement);
 			
