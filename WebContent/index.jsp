@@ -41,7 +41,7 @@
 											
 		</div>
 		
-		<div class="container col-xs-12 bg-warning">
+		<div class="container col-xs-12 bg-warning" id="testimonialOuterBoarder">
 			<h2>Testimonials</h2>
 			
 			<div class="container">
