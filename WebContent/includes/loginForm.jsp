@@ -10,7 +10,8 @@
 			<input type="password" size="50" name="password" id="password" required="required">
 			<br>
 		</fieldset>
-		<input type="submit" name="submit" id="submit" value="Submit"><button id="register">Register</button>
+		<input type="submit" name="submit" id="submit" value="Submit" class="btn btn-default inline">
+		<button id="register" class="btn btn-default inline">Register</button>
 	</form>
 	
 </div>

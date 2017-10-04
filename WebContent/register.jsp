@@ -14,55 +14,50 @@
 		</nav>
 		
 		<div id="wrapper">
+			<main class="container">
+	
+				<h2>Sign up to Ride!</h2>
+				<p>Fill out the form below. Required fields are marked with an asterisk *</p>
 
-		<header>
-			<h1>Not Yet Carpool Service</h1>  
-		</header>
+				<form method="post" action="AddPerson">
+					<fieldset>
+						<label for="firstName">*First Name:</label>
+						<br>
+						<input type="text" size="50" name="firstName" id="firstName" required="required">
+						<br>
+		
+						<label for="lastName">*Last Name:</label>
+						<br>
+						<input type="text" size="50" name="lastName" id="lastName" required="required">
+						<br>
+		
+						<label for="myEmail">*E-mail (example@domain.com):</label>
+						<br>
+						<input type="email" size="50" name="myEmail" id="myEmail" required="required">
+						<br>
+		
+						<label for="number">*Phone Number (XXX-XXX-XXXX):</label>
+						<br>
+						<input type='tel' pattern="^\d{3}-\d{3}-\d{4}$"  title='Phone Number (Format: XXX-XXX-XXXX)' name="number" id="number" required="required">
+						<br>
+						
+						<label for="password">*Password:</label>
+						<br>
+						<input type='password' title='Password' name="password" id="password" required="required">
+						<br>
+		
+		<!-- 				<label for="preference">*Specific Preferences:</label>
+						<br>
+		
+						<textarea name="preference" id="preference" cols="20" rows="2"></textarea>		 -->		
+		
+					</fieldset>
+				<br>
+				<input type="submit" name="submit" id="submit" value="Submit" class="btn btn-default"> </form>
+				<br>
 
-		<main>
-	
-			<h2>Need a Lift?</h2>
-			<p>Fill out the form below. Required fields are marked with an asterisk *</p>
-
-			<form method="post" action="AddPerson">
-				<fieldset>
-					<label for="firstName">*First Name:</label>
-					<br>
-					<input type="text" size="50" name="firstName" id="firstName" required="required">
-					<br>
-	
-					<label for="lastName">*Last Name:</label>
-					<br>
-					<input type="text" size="50" name="lastName" id="lastName" required="required">
-					<br>
-	
-					<label for="myEmail">*E-mail (example@domain.com):</label>
-					<br>
-					<input type="email" size="50" name="myEmail" id="myEmail" required="required">
-					<br>
-	
-					<label for="number">*Phone Number (XXX-XXX-XXXX):</label>
-					<br>
-					<input type='tel' pattern="^\d{3}-\d{3}-\d{4}$"  title='Phone Number (Format: XXX-XXX-XXXX)' name="number" id="number" required="required">
-					<br>
-					
-					<label for="password">*Password:</label>
-					<br>
-					<input type='password' title='Password' name="password" id="password" required="required">
-					<br>
-	
-	<!-- 				<label for="preference">*Specific Preferences:</label>
-					<br>
-	
-					<textarea name="preference" id="preference" cols="20" rows="2"></textarea>		 -->		
-	
-				</fieldset>
-
-			<input type="submit" name="submit" id="submit" value="Submit"> </form>
-			<br>
-
-			<div id="map" style="width:400px;height:400px;">
-			</div>			
+				<div id="map" style="width:400px;height:400px;">
+				</div>			
 
 	</main>
 
