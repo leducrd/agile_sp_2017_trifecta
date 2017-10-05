@@ -12,7 +12,6 @@ import impl.RideDaoException;
 import impl.RideDaoImpl;
 
 
-
 public class RideTest {
 
 	@Test
