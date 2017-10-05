@@ -3,6 +3,11 @@ package tests;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 import org.junit.Test;
@@ -11,6 +16,7 @@ import classes.Person;
 import dao.PersonDao;
 import impl.PersonDaoException;
 import impl.PersonDaoImpl;
+import util.DBUtility;
 
 public class PersonTest {
 	
@@ -38,6 +44,35 @@ public class PersonTest {
 			
 			e.printStackTrace();
 			
+		}
+		
+	}
+	
+	@Test
+	public void peopleTableTest() {
+		
+		Connection connection = null;
+		Statement statement = null;
+		DatabaseMetaData dbm = null;
+		
+		try {
+			connection = DBUtility.createConnection();
+			statement = connection.createStatement();
+			
+			statement.executeUpdate("DROP TABLE IF EXISTS people;");
+			statement.executeUpdate("CREATE TABLE people (userID integer primary key autoincrement, LName text, FName text, Phone text, Email text, Password text);");
+			
+			dbm = connection.getMetaData();
+			
+			ResultSet tablesList = dbm.getTables(null, null, "people", null);
+			
+			assertThat(tablesList.next(), is(true));
+		
+		} catch(ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+			
+		} finally {
+			DBUtility.closeConnection(connection, statement);
 		}
 		
 	}
