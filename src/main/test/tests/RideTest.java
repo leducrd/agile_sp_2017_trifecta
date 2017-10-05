@@ -18,7 +18,6 @@ import impl.RideDaoImpl;
 import util.DBUtility;
 
 
-
 public class RideTest {
 
 	@Test
