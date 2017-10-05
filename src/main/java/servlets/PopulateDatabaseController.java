@@ -14,6 +14,7 @@ import impl.PersonDaoException;
 import impl.PersonDaoImpl;
 import impl.RideDaoException;
 import impl.RideDaoImpl;
+import util.DBUtility;
 
 /**
  * Servlet implementation class PopulateDatabaseController
@@ -31,13 +32,8 @@ public class PopulateDatabaseController extends HttpServlet {
 		
 		try {
 			
-			final PersonDao personDao = new PersonDaoImpl();
-			final RideDao rideDao = new RideDaoImpl();
-			
-			personDao.createPeopleTable();
-			rideDao.createRideRequestTable();
-			
-			request.setAttribute("message", "You may see an error page, but really you were successful in populating the database.");
+			DBUtility.createDatabase();
+			request.setAttribute("message", "You were successful in populating the database.");
 			
 			target = "success.jsp";
 		} catch (PersonDaoException | RideDaoException e) {

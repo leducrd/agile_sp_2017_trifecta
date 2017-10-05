@@ -5,6 +5,13 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import dao.PersonDao;
+import dao.RideDao;
+import impl.PersonDaoException;
+import impl.PersonDaoImpl;
+import impl.RideDaoException;
+import impl.RideDaoImpl;
+
 public class DBUtility {
 	
 	public static final int TIMEOUT = 30;
@@ -34,5 +41,14 @@ public class DBUtility {
 		} catch (final SQLException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public static void createDatabase() throws PersonDaoException, RideDaoException {
+		
+		final PersonDao personDao = new PersonDaoImpl();
+		final RideDao rideDao = new RideDaoImpl();
+		
+		personDao.createPeopleTable();
+		rideDao.createRideRequestTable();
 	}
 }

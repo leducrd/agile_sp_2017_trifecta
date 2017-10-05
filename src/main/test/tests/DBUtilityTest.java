@@ -16,11 +16,6 @@ import java.sql.Statement;
 public class DBUtilityTest {
 	
 	@Test
-	public void CreateTest() {
-		
-	}
-
-	@Test
 	public void ConnectionTest() {
 		
 		Connection connection;
