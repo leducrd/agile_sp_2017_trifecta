@@ -8,6 +8,9 @@ import java.util.List;
 import org.junit.Test;
 
 import classes.DriverReview;
+import dao.DriverReviewDao;
+import impl.DriverReviewDaoException;
+import impl.DriverReviewDaoImpl;
 
 
 
@@ -25,21 +28,21 @@ public class DriverReviewTest {
 		
 	}
 	
-	/*@Test 
+	@Test 
 	public void retrieveDriverReviewTest() {
 		
-		final DriverReviewDao driverReviewDao = new DriverReviewImpl();
+		final DriverReviewDao driverReviewDao = new DriverReviewDaoImpl();
 		try{
 			final List<DriverReview> driverReview = driverReviewDao.retrieveDriverReview();
 			assertThat(driverReview.isEmpty(), is(false));
-		} catch (DriverReviewException e){
+		} catch (DriverReviewDaoException e){
 			e.printStackTrace();
 		}
 		
 	}
 	
 	
-	*/
+	
 	
 	
 }
