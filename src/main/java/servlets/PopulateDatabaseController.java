@@ -39,7 +39,7 @@ public class PopulateDatabaseController extends HttpServlet {
 			
 			request.setAttribute("message", "You may see an error page, but really you were successful in populating the database.");
 			
-			target = "error.jsp";
+			target = "success.jsp";
 		} catch (PersonDaoException | RideDaoException e) {
 			
 			e.printStackTrace();

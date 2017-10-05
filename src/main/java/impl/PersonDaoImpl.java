@@ -35,7 +35,7 @@ public class PersonDaoImpl implements PersonDao {
 		} catch(ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 			
-			throw new PersonDaoException("Error: Unable to populate database");
+			throw new PersonDaoException("Error: Unable to create people table");
 		} finally {
 			DBUtility.closeConnection(connection, statement);
 		}
