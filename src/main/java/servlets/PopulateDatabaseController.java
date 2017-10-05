@@ -34,7 +34,7 @@ String target = null;
 			final PersonDao personDao = new PersonDaoImpl();
 			final RideDao rideDao = new RideDaoImpl();
 			
-			personDao.createDatabase();
+			personDao.createPeopleTable();
 			rideDao.createDatabase();
 			
 			request.setAttribute("message", "You may see an error page, but really you were successful in populating the database.");
