@@ -27,7 +27,7 @@ public class PopulateDatabaseController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-String target = null;
+		String target = null;
 		
 		try {
 			
@@ -35,7 +35,7 @@ String target = null;
 			final RideDao rideDao = new RideDaoImpl();
 			
 			personDao.createPeopleTable();
-			rideDao.createDatabase();
+			rideDao.createRideRequestTable();
 			
 			request.setAttribute("message", "You may see an error page, but really you were successful in populating the database.");
 			
