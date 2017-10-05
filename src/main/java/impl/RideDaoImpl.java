@@ -17,7 +17,7 @@ public class RideDaoImpl implements RideDao {
 	private static final String CREATE_TABLE_RIDEREQUEST = "CREATE TABLE rideRequest (rideID integer primary key autoincrement, userID integer, destination text, leave text, return text, event text, reason text);";
 
 	
-	public void createDatabase() throws RideDaoException {
+	public void createRideRequestTable() throws RideDaoException {
 		
 		Connection connection = null;
 		Statement statement = null;
@@ -33,7 +33,7 @@ public class RideDaoImpl implements RideDao {
 		} catch(ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 			
-			throw new RideDaoException("Error: Unable to populate database");
+			throw new RideDaoException("Error: Unable to create RideRequest Table.");
 		} finally {
 			DBUtility.closeConnection(connection, statement);
 		}

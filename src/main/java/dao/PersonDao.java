@@ -7,7 +7,7 @@ import impl.PersonDaoException;
 
 public interface PersonDao {
 	
-	void createDatabase() throws PersonDaoException;
+	void createPeopleTable() throws PersonDaoException;
 	
 	void insertPerson(Person person) throws PersonDaoException;
 	
