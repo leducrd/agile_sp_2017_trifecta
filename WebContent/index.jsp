@@ -27,20 +27,24 @@
 		</section>
 		
 		<div>		
-			<section id="aboutUsContent" class="container">				
- 				<h2>About Us</h2>
- 					
-				<p>This is the reason we exist.  These are the problems that we are passionate
-				about solving. This is the unique and important information regarding our
-				carpool service and why you will want to utilize it. These are our strong points 
-				that we'd like to express. And these are our selling points, such as low rates, 
-				high safety, excellent ratings and the reasons behind them.</p>
-				
-				<p>We strive to be your car-pooling experts by connecting local commuters
-				and assisting in providing safe, convenient travel options. Based your pickup
-				and drop-off locations, we do our absolute best to find a solution so that you're able to 
-				 connect with others along a similar path.  Don't take our word for it. Get it
-				 straight from our user's testimonials below!</p>
+			<section class="container">
+				<div class="row">
+					<div id="aboutUsContent" class="col-xs-12 text-center">				
+		 				<h2>About Us</h2>
+		 					
+						<p>This is the reason we exist.  These are the problems that we are passionate
+						about solving. This is the unique and important information regarding our
+						carpool service and why you will want to utilize it. These are our strong points 
+						that we'd like to express. And these are our selling points, such as low rates, 
+						high safety, excellent ratings and the reasons behind them.</p>
+						
+						<p>We strive to be your car-pooling experts by connecting local commuters
+						and assisting in providing safe, convenient travel options. Based your pickup
+						and drop-off locations, we do our absolute best to find a solution so that you're able to 
+						 connect with others along a similar path.  Don't take our word for it. Get it
+						 straight from our user's testimonials below!</p>
+					 </div>
+				 </div>
 			</section>
 											
 		</div>
