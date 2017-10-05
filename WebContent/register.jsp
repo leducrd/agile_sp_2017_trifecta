@@ -8,12 +8,12 @@
 		<title>Register Now</title>
 		<%@ include file="includes/stylesheets.jsp" %>
 	</head>
-	<body id="wrapper">
+	<body>
 		<nav class="navbar navbar-inverse">
 			<%@ include file="includes/navigation.jsp" %>	
 		</nav>
 		
-		<div id="wrapper">
+		<div>
 			<main class="container">
 	
 				<h2>Sign up to Ride!</h2>
@@ -62,11 +62,10 @@
 	</main>
 
 </div>
-		<footer> 
-			<small>
-	          Copyright &copy; 2017 Not Yet<br>
-	          <a href="mailto:notyet@gmail.com">notyet@gmail.com</a></small>
-	    </footer>
+		<footer class="footer text-center">
+			<%@ include file="includes/footer.jsp" %>	
+		</footer>
+		
 		<%@ include file="includes/scripts.jsp" %>
 	</body>
 </html>

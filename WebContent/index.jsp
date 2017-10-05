@@ -7,23 +7,27 @@
 		<title>NotYet-Home</title>
 		<%@ include file="includes/stylesheets.jsp" %>
 	</head>
-	<body id="wrapper">
+	
+	<body>
+	
 		<nav class="navbar navbar-inverse">
 			<%@ include file="includes/navigation.jsp" %>	
 		</nav>
 		
-		<div class="container">	 
-
-			<header>
-				<h1 class="text-center">Not Yet Carpool Service</h1>  
-			</header>
-			<%@ include file="includes/loginForm.jsp" %>
-			
-			<figure class="text-center">
-				<img class="figure-img img-fluid" src="assets/images/home-driver.jpg" alt="Driver Photo">
-			</figure>
+		<section id="mainImage">
+			<div class="container col-xs-12">	 
+	
+				<header>
+					<h1 class="text-center">Not Yet Carpool Service</h1>  
+				</header>
 				
-			<section class="content">				
+				<%@ include file="includes/loginForm.jsp" %>
+				
+			</div>
+		</section>
+		
+		<div>		
+			<section id="aboutUsContent" class="container">				
  				<h2>About Us</h2>
  					
 				<p>This is the reason we exist.  These are the problems that we are passionate
@@ -103,7 +107,7 @@
 			</div>
 		</div>
 		
-		<footer class="footer text-right">
+		<footer class="footer text-center">
 			<%@ include file="includes/footer.jsp" %>	
 		</footer>
 	

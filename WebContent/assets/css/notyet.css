@@ -1,12 +1,11 @@
 body {
-	font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
-}
-
-#wrapper {
 	
+	font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
 	background-color: #729CBF;
-	margin: 0 auto;
-	width: 100%;
+	background-image: url("WebContent/assets/images/weather.png");
+	background-position: top left;
+	background-repeat: repeat;
+	background-attachment: fixed;
 }
 
 #testimonialOuterBoarder {

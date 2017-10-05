@@ -8,7 +8,7 @@
 		<title>Request a Ride</title>
 		<%@ include file="includes/stylesheets.jsp" %>
 	</head>
-	<body id="wrapper">
+	<body>
 		<nav class="navbar navbar-inverse">
 			<%@ include file="includes/navigation.jsp" %>	
 		</nav>
@@ -56,6 +56,11 @@
 				<input type="submit" name="submit" id="submit" value="Submit" class="btn btn-default"> </form>
 			<br>
 		</main>
+		
+		<footer class="footer text-center">
+			<%@ include file="includes/footer.jsp" %>	
+		</footer>
+		
 		<%@ include file="includes/scripts.jsp" %>
 	</body>
 </html>
