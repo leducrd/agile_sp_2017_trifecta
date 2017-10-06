@@ -14,12 +14,15 @@ import javax.servlet.annotation.WebFilter;
  */
 @WebFilter("/RegisterFilter")
 public class RegisterFilter implements Filter {
-
+	
+	private FilterConfig filterConfig = null;
+	
 	/**
-	 * @see Filter#destroy()
+	 * @see Filter#init(FilterConfig)
 	 */
-	public void destroy() {
-		// TODO Auto-generated method stub
+	public void init(FilterConfig fConfig) throws ServletException {
+		
+		this.filterConfig = fConfig;
 	}
 
 	/**
@@ -34,9 +37,9 @@ public class RegisterFilter implements Filter {
 	}
 
 	/**
-	 * @see Filter#init(FilterConfig)
+	 * @see Filter#destroy()
 	 */
-	public void init(FilterConfig fConfig) throws ServletException {
+	public void destroy() {
 		// TODO Auto-generated method stub
 	}
 
