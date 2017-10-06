@@ -49,12 +49,12 @@
 											
 		</div>
 		
-		<div class="container col-xs-12 bg-warning" id="testimonialOuterBoarder">
+		<div class="container col-xs-11" id="testimonialOuterBoarder">
 			<h2>Testimonials</h2>
 			
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-12">
+					<div class="col-xs-11">
 						
 						<div id="testimonialSlider" class="carousel slide" data-ride="carousel">
 							
@@ -110,11 +110,11 @@
 				
 			</div>
 		</div>
-		
-		<footer class="footer text-center">
-			<%@ include file="includes/footer.jsp" %>	
-		</footer>
-	
+		<section class="container">
+			<footer class="footer text-center">
+				<%@ include file="includes/footer.jsp" %>	
+			</footer>
+		</section>
 		<%@ include file="includes/scripts.jsp" %>
 		
 	</body>
