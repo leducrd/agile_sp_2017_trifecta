@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * Servlet Filter implementation class RegisterFilter
@@ -29,10 +30,8 @@ public class RegisterFilter implements Filter {
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		// TODO Auto-generated method stub
-		// place your code here
-		// stuff
-		// pass the request along the filter chain
+		
+		
 		chain.doFilter(request, response);
 	}
 
@@ -41,6 +40,21 @@ public class RegisterFilter implements Filter {
 	 */
 	public void destroy() {
 		// TODO Auto-generated method stub
+	}
+	
+	public static boolean isIgnoredPath(final ServletRequest request, final FilterConfig filterConfig) {
+		
+		final String requestURI = ((HttpServletRequest) request).getRequestURI();
+		final String pathsToIgnore = filterConfig.getInitParameter("pathsToIgnore");
+		
+		for (final String path : pathsToIgnore.split("'")) {
+			
+			if (requestURI.contains(path)) {
+				return true;
+			}
+			
+		}
+		return false;
 	}
 
 }
