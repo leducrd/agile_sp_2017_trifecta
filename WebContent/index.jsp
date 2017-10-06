@@ -1,42 +1,50 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en-US">
+
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<title>NotYet-Home</title>
-		<%@ include file="includes/stylesheets.jsp" %>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<%@ include file="includes/styles.jsp" %>
 	</head>
-	<body id="wrapper">
+	
+	<body>
+	
 		<nav class="navbar navbar-inverse">
 			<%@ include file="includes/navigation.jsp" %>	
 		</nav>
 		
-		<div class="container">	 
-
-			<header>
-				<h1 class="text-center">Not Yet Carpool Service</h1>  
-			</header>
-			<%@ include file="includes/loginForm.jsp" %>
-			
-			<figure class="text-center">
-				<img class="figure-img img-fluid" src="assets/images/home-driver.jpg" alt="Driver Photo">
-			</figure>
+		<section id="mainImage">
+			<div class="container col-xs-12">	 
+	
+				<header>
+					<h1 class="text-center">Not Yet Carpool Service</h1>  
+				</header>
 				
-			<section class="content">				
- 				<h2>About Us</h2>
- 					
-				<p>This is the reason we exist.  These are the problems that we are passionate
-				about solving. This is the unique and important information regarding our
-				carpool service and why you will want to utilize it. These are our strong points 
-				that we'd like to express. And these are our selling points, such as low rates, 
-				high safety, excellent ratings and the reasons behind them.</p>
+				<%@ include file="includes/loginForm.jsp" %>
 				
-				<p>We strive to be your car-pooling experts by connecting local commuters
-				and assisting in providing safe, convenient travel options. Based your pickup
-				and drop-off locations, we do our absolute best to find a solution so that you're able to 
-				 connect with others along a similar path.  Don't take our word for it. Get it
-				 straight from our user's testimonials below!</p>
+			</div>
+		</section>
+		
+		<div>		
+			<section class="container">
+				<div class="row">
+					<div id="aboutUsContent" class="col-xs-12 text-center">				
+		 				<h2>About Us</h2>
+		 					
+						<p>This is the reason we exist.  These are the problems that we are passionate
+						about solving. This is the unique and important information regarding our
+						carpool service and why you will want to utilize it. These are our strong points 
+						that we'd like to express. And these are our selling points, such as low rates, 
+						high safety, excellent ratings and the reasons behind them.</p>
+						
+						<p>We strive to be your car-pooling experts by connecting local commuters
+						and assisting in providing safe, convenient travel options. Based your pickup
+						and drop-off locations, we do our absolute best to find a solution so that you're able to 
+						 connect with others along a similar path.  Don't take our word for it. Get it
+						 straight from our user's testimonials below!</p>
+					 </div>
+				 </div>
 			</section>
 											
 		</div>
@@ -103,7 +111,7 @@
 			</div>
 		</div>
 		
-		<footer class="footer text-right">
+		<footer class="footer text-center">
 			<%@ include file="includes/footer.jsp" %>	
 		</footer>
 	

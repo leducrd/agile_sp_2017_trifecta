@@ -29,7 +29,7 @@ String target = null;
 		try {
 			
 			final RideDao rideDao = new RideDaoImpl();
-			rideDao.createDatabase();
+			rideDao.createRideRequestTable();
 			
 			request.setAttribute("message", "You may see an error page, but really you were successful in populating the database.");
 			
