@@ -46,21 +46,11 @@
 			</section>
 											
 		</div>
-		
-<<<<<<< HEAD
-		<div class="container col-xs-11" id="testimonialOuterBoarder">
-=======
 		<div class="container col-xs-10 col-xs-offset-1" id="testimonialOuterBoarder">
->>>>>>> html
-			<h2>Testimonials</h2>
-			
+			<h2>Testimonials</h2>		
 			<div class="container">
 				<div class="row">
-<<<<<<< HEAD
-					<div class="col-xs-11">
-=======
-					<div class="container col-xs-12">
->>>>>>> html
+					<div class="col-xs-10">
 						
 						<div id="testimonialSlider" class="carousel slide" data-ride="carousel">
 							
@@ -116,19 +106,12 @@
 				
 			</div>
 		</div>
-<<<<<<< HEAD
-		<section class="container">
-			<footer class="footer text-center">
-				<%@ include file="includes/footer.jsp" %>	
-			</footer>
-		</section>
-=======
-		<br>
+		
 		<footer class="container footer text-center">
 			<%@ include file="includes/footer.jsp" %>	
 		</footer>
 	
->>>>>>> html
+
 		<%@ include file="includes/scripts.jsp" %>
 		
 	</body>
