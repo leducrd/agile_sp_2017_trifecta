@@ -15,8 +15,8 @@
 		</nav>
 		
 		<section id="mainBannar">
-			<div class="container col-xs-12">
-				<div class="jumbotron text-center">	 
+			<div class="container-fluid col-xs-12">
+				<div id="jumbotronContent" class="jumbotron text-center">	 
 					<h1>Not Yet Carpool Service</h1> 
 					<a href="#loginForm" data-toggle="collapse">Login Now!</a>	
 					<%@ include file="includes/loginForm.jsp" %>	
