@@ -74,7 +74,7 @@
 			
 		</main>
 		
-		<footer class="footer text-center">
+		<footer class="container footer text-center">
 			<%@ include file="includes/footer.jsp" %>	
 		</footer>
 		
