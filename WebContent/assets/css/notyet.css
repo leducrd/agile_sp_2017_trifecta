@@ -1,35 +1,35 @@
 body {
-	
 	background-image: url('../images/weather.png');
 	background-repeat: repeat;	
 	font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
-
+	
 }
 
 #testimonialOuterBoarder {
-	
 	background-image: url('../images/DiamondTexture.jpg');
 	border-radius: 2%;
-	box-shadow: 10px 10px 5px #888
-	
+	box-shadow: 10px 10px 5px #888;
+		
 }
 
 #testimonialSlider {
+	box-shadow: 10px 0px 5px #888;
 	
+}
+
+#testimonialSlider {	
 	box-shadow: 10px 10px 5px #888
 	
 }
 
-#aboutUsContent {
-	padding-top: 20px; 
+#aboutUsContent { 
 	padding-bottom: 30px;
+
 }
 
-#footerText {
-	padding-top: 20px;
-}
 
 #map {
 	height: 300px;
 	width: 100%;
 }
+
