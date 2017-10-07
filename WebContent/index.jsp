@@ -14,15 +14,13 @@
 			<%@ include file="includes/navigation.jsp" %>	
 		</nav>
 		
-		<section id="mainImage">
-			<div class="container col-xs-12">	 
-	
-				<header>
-					<h1 class="text-center">Not Yet Carpool Service</h1>  
-				</header>
-				
-				<%@ include file="includes/loginForm.jsp" %>
-				
+		<section id="mainBannar">
+			<div class="container col-xs-12">
+				<div class="jumbotron text-center">	 
+					<h1>Not Yet Carpool Service</h1> 
+					<a href="#loginForm" data-toggle="collapse">Login Now!</a>	
+					<%@ include file="includes/loginForm.jsp" %>	
+				</div>
 			</div>
 		</section>
 		
@@ -49,12 +47,12 @@
 											
 		</div>
 		
-		<div class="container col-xs-12 bg-warning" id="testimonialOuterBoarder">
+		<div class="container col-xs-10 col-xs-offset-1" id="testimonialOuterBoarder">
 			<h2>Testimonials</h2>
 			
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-12">
+					<div class="container col-xs-12">
 						
 						<div id="testimonialSlider" class="carousel slide" data-ride="carousel">
 							
@@ -110,8 +108,8 @@
 				
 			</div>
 		</div>
-		
-		<footer class="footer text-center">
+		<br>
+		<footer class="container footer text-center">
 			<%@ include file="includes/footer.jsp" %>	
 		</footer>
 	
