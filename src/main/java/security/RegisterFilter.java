@@ -9,6 +9,9 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import classes.Person;
 
 /**
  * Servlet Filter implementation class RegisterFilter
@@ -42,7 +45,7 @@ public class RegisterFilter implements Filter {
 		// TODO Auto-generated method stub
 	}
 	
-	public static boolean isIgnoredPath(final ServletRequest request, final FilterConfig filterConfig) {
+	private static boolean isIgnoredPath(final ServletRequest request, final FilterConfig filterConfig) {
 		
 		final String requestURI = ((HttpServletRequest) request).getRequestURI();
 		final String pathsToIgnore = filterConfig.getInitParameter("pathsToIgnore");
@@ -55,6 +58,18 @@ public class RegisterFilter implements Filter {
 			
 		}
 		return false;
+	}
+	
+	private static boolean isLoggedIn(final ServletRequest request, final ServletResponse response) {
+		
+		final HttpSession session = ((HttpServletRequest) request).getSession();
+		Person person = (Person) session.getAttribute("person");
+		
+		if (person == null) {
+			return false;
+		}
+		
+		return true;
 	}
 
 }
