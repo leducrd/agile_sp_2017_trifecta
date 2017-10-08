@@ -18,7 +18,7 @@
 			<div class="container-fluid col-xs-12">
 				<div id="jumbotronContent" class="jumbotron text-center">	 
 					<h1>Not Yet Carpool Service</h1> 
-					<a class="btn btn-primary" href="#loginForm" roll="button" data-toggle="collapse">Login Now!</a>	
+					<a class="btn btn-lg" id="btn-style" href="#loginForm" roll="button" data-toggle="collapse">Login Now!</a>	
 					<%@ include file="includes/loginForm.jsp" %>	
 				</div>
 			</div>
@@ -28,7 +28,7 @@
 			<section class="container">
 				<div class="row">
 					<div id="aboutUsContent" class="col-xs-12 text-center">				
-		 				<h2>About Us</h2>
+		 				<h2 id="aboutUs-header">About Us</h2>
 		 					
 						<p>This is the reason we exist.  These are the problems that we are passionate
 						about solving. This is the unique and important information regarding our
@@ -47,7 +47,7 @@
 											
 		</div>
 		<div class="container col-xs-10 col-xs-offset-1" id="testimonialOuterBoarder">
-			<h2>Testimonials</h2>		
+			<h3><B>Testimonials</B></h3>		
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-10">
@@ -66,7 +66,7 @@
 								
 								<div class="item active">
 									<img src="assets/images/MarqueMark.jpg" alt="Marque Mark" class="img-rounded"/>
-									<div class="carousel-caption">
+									<div class="carousel-caption" id="carousel-caption">
 												<p>"What a great idea! This is exactly what this area has been in need of for a number of
 						 						years now. I've personally cut the mileage on my car in half since I started using NotYet!"<br>-Marque Mark</p>
 									</div>
@@ -74,7 +74,7 @@
 									
 								<div class="item">
 									<img src="assets/images/DonJohn.jpg" alt="Don John" class="img-rounded"/>
-									<div class="carousel-caption">
+									<div class="carousel-caption" id="carousel-caption">
 												<p>"This is just the most unbelievably wonderful organization I've ever worked with. And believe
 					 							 me, I've worked with more organizations than anyone alive! Great people!"<br>-Don John</p>
 									</div>
@@ -82,7 +82,7 @@
 								
 								<div class="item">
 									<img src="assets/images/CyndiLauper.jpg" alt="Cyndi Lauper" class="img-rounded"/>
-									<div class="carousel-caption">
+									<div class="carousel-caption" id="carousel-caption">
 												<p>"This is like totally the best and coolest rideshare service ever!"<br>-Cyndi Lauper</p>
 									</div>
 								</div>
