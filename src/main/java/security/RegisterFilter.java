@@ -58,7 +58,7 @@ public class RegisterFilter implements Filter {
 		final String requestURI = ((HttpServletRequest) request).getRequestURI();
 		final String pathsToIgnore = filterConfig.getInitParameter("pathsToIgnore");
 		
-		for (final String path : pathsToIgnore.split("'")) {
+		for (final String path : pathsToIgnore.split(",")) {
 			
 			if (requestURI.contains(path)) {
 				return true;
