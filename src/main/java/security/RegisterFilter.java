@@ -42,7 +42,7 @@ public class RegisterFilter implements Filter {
 	 * @see Filter#destroy()
 	 */
 	public void destroy() {
-		// TODO Auto-generated method stub
+		filterConfig = null;
 	}
 	
 	private static boolean isIgnoredPath(final ServletRequest request, final FilterConfig filterConfig) {
@@ -63,7 +63,7 @@ public class RegisterFilter implements Filter {
 	private static boolean isLoggedIn(final ServletRequest request, final ServletResponse response) {
 		
 		final HttpSession session = ((HttpServletRequest) request).getSession();
-		Person person = (Person) session.getAttribute("person");
+		Person person = (Person) session.getAttribute("people");
 		
 		if (person == null) {
 			return false;
