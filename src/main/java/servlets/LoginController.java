@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import classes.Person;
 import dao.PersonDao;
@@ -28,21 +29,23 @@ public class LoginController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String target = null;
-				
+		HttpSession session = request.getSession();
+		
 		try {
 			final String userName = request.getParameter("loginEmail");
 			final String password = request.getParameter("password");
 			final PersonDao personDao = new PersonDaoImpl();
 			final List<Person> people = personDao.retrievePeople();
-			
+			Person loggedInUser;
 
 			final List<Person> exactPerson = people
 													.stream()
 													.filter((person) -> person.getEmail().equals(userName))
 													.filter((person) -> person.getPassword().equals(password))
 													.collect(Collectors.toList());
+			loggedInUser = exactPerson.get(0);
 			
-request.setAttribute("people", exactPerson);
+			session.setAttribute("people", loggedInUser);
 			
 			target = "viewAllPeople.jsp";
 			

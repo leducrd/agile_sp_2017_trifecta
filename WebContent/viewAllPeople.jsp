@@ -19,14 +19,14 @@
 		  </c:when>
 		  <c:otherwise>
 		  <h1>Logged In</h1>
-		    <c:forEach var="person" items="${people}">
+		    <%-- <c:forEach var="person" items="${people}"> --%>
 		      <div class="span4">
-		        <h4>${person.firstName}, ${person.lastName}</h4>
-		        <p>Phone: ${person.phoneNumber}</p>
-		        <p>Email: ${person.email}</p>
-		        <p>Password: ${person.password}</p>
+		        <h4>${people.firstName}, ${people.lastName}</h4>
+		        <p>Phone: ${people.phoneNumber}</p>
+		        <p>Email: ${people.email}</p>
+		        <p>Password: ${people.password}</p>
 		      </div>
-		    </c:forEach>
+		    <%-- </c:forEach> --%>
 		  </c:otherwise>
 		 
 		</c:choose>
