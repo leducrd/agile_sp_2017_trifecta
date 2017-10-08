@@ -34,8 +34,16 @@ public class RegisterFilter implements Filter {
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		
+		if (isIgnoredPath(request, filterConfig) || isLoggedIn(request, response)) {
+			
+			chain.doFilter(request, response);
+			
+		} else {
+			
+			((HttpServletRequest) request).getRequestDispatcher("register.jsp").forward(request, response);
+		}
 		
-		chain.doFilter(request, response);
+		
 	}
 
 	/**
