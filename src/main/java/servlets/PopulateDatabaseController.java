@@ -9,8 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 
 
 import dao.PersonDao;
+import dao.RideDao;
 import impl.PersonDaoException;
 import impl.PersonDaoImpl;
+import impl.RideDaoException;
+import impl.RideDaoImpl;
+import util.DBUtility;
 
 /**
  * Servlet implementation class PopulateDatabaseController
@@ -24,18 +28,15 @@ public class PopulateDatabaseController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-String target = null;
+		String target = null;
 		
 		try {
 			
-			final PersonDao personDao = new PersonDaoImpl();
+			DBUtility.createDatabase();
+			request.setAttribute("message", "You were successful in populating the database.");
 			
-			personDao.createDatabase();
-			
-			request.setAttribute("message", "You may see an error page, but really you were successful in populating the database.");
-			
-			target = "error.jsp";
-		} catch (PersonDaoException e) {
+			target = "success.jsp";
+		} catch (PersonDaoException | RideDaoException e) {
 			
 			e.printStackTrace();
 			request.setAttribute("message", "You weren't able to populate the database.");

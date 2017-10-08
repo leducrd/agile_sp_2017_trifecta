@@ -18,7 +18,7 @@ public class PersonDaoImpl implements PersonDao {
 	private static final String SELECT_ALL_FROM_PERSON = "SELECT * from people;";
 	
 	@Override
-	public void createDatabase() throws PersonDaoException {
+	public void createPeopleTable() throws PersonDaoException {
 		
 		Connection connection = null;
 		Statement statement = null;
@@ -35,7 +35,7 @@ public class PersonDaoImpl implements PersonDao {
 		} catch(ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 			
-			throw new PersonDaoException("Error: Unable to populate database");
+			throw new PersonDaoException("Error: Unable to create people table");
 		} finally {
 			DBUtility.closeConnection(connection, statement);
 		}
