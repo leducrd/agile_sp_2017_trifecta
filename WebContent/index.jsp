@@ -18,7 +18,7 @@
 			<div class="container-fluid col-xs-12">
 				<div id="jumbotronContent" class="jumbotron text-center">	 
 					<h1>Not Yet Carpool Service</h1> 
-					<a href="#loginForm" data-toggle="collapse">Login Now!</a>	
+					<a class="btn btn-primary" href="#loginForm" roll="button" data-toggle="collapse">Login Now!</a>	
 					<%@ include file="includes/loginForm.jsp" %>	
 				</div>
 			</div>
