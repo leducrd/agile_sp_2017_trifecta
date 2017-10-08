@@ -6,6 +6,7 @@
 		<title>Request a Ride</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<%@ include file="includes/styles.jsp" %>
+		<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
 	</head>
 	
 	<body>
@@ -13,6 +14,8 @@
 		<nav class="navbar navbar-inverse">
 			<%@ include file="includes/navigation.jsp" %>	
 		</nav>
+		
+		<div id="map"></div>
 		
 		<main class="container">
 			<h2>Request a Ride</h2>
@@ -57,9 +60,21 @@
 				<br>
 				<input type="submit" name="submit" id="submit" value="Submit" class="btn btn-default"> </form>
 			<br>
+			
+			<script>
+				function initMap() {
+					var location = {lat: 44.862234, lng: -91.482216};
+					var map = new google.maps.Map(document.getElementById("map"), {
+						zoom: 4,
+						center: location			
+					});
+				}
+			</script>
+			<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkHNsQhmsFP4irT3TbTmFHWfPYVXj9vSU&callback=initMap"></script>
+			
 		</main>
 		
-		<footer class="footer text-center">
+		<footer class="container footer text-center">
 			<%@ include file="includes/footer.jsp" %>	
 		</footer>
 		
