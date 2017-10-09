@@ -25,6 +25,7 @@
 		        <p>Phone: ${people.phoneNumber}</p>
 		        <p>Email: ${people.email}</p>
 		        <p>Password: ${people.password}</p>
+		        <p>User Type: ${people.userType}</p>
 		      </div>
 		    <%-- </c:forEach> --%>
 		  </c:otherwise>
