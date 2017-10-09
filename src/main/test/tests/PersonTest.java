@@ -23,12 +23,13 @@ public class PersonTest {
 	@Test
 	public void personTest() {
 		
-			Person person1 = new Person("John","Johnson","715-555-5555","jjohnson@test.com", "password123");
+			Person person1 = new Person("John","Johnson","715-555-5555","jjohnson@test.com", "password123", "r");
 			assertThat(person1.getFirstName(), is("John"));
 			assertThat(person1.getLastName(), is("Johnson"));
 			assertThat(person1.getPhoneNumber(), is("715-555-5555"));
 			assertThat(person1.getEmail(), is("jjohnson@test.com"));
 			assertThat(person1.getPassword(), is("password123"));
+			assertThat(person1.getUserType(), is("r"));
 	}
 	
 	@Test
@@ -36,7 +37,7 @@ public class PersonTest {
 
 		final PersonDao personDao = new PersonDaoImpl();
 		
-		Person person1 = new Person("John","Johnson","715-555-5555","jjohnson@test.com", "password123");
+		Person person1 = new Person("John","Johnson","715-555-5555","jjohnson@test.com", "password123", "d");
 		
 		try {
 			
@@ -65,7 +66,7 @@ public class PersonTest {
 			statement = connection.createStatement();
 			
 			statement.executeUpdate("DROP TABLE IF EXISTS people;");
-			statement.executeUpdate("CREATE TABLE people (userID integer primary key autoincrement, LName text, FName text, Phone text, Email text, Password text);");
+			statement.executeUpdate("CREATE TABLE people (userID integer primary key autoincrement, LName text, FName text, Phone text, Email text, Password text, userType text);");
 			
 			dbm = connection.getMetaData();
 			

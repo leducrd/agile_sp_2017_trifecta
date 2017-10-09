@@ -11,6 +11,7 @@ public class Person implements Serializable{
 	private String phoneNumber;
 	private String email;
 	private String password;
+	private String userType;
 	 
 	
 	public Person(){
@@ -18,13 +19,14 @@ public class Person implements Serializable{
 	}
 
 
-	public Person(String firstName, String lastName, String phoneNumber, String email, String password) {
+	public Person(String firstName, String lastName, String phoneNumber, String email, String password, String userType) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.phoneNumber = phoneNumber;
 		this.email = email;
 		this.password = password;
+		this.userType = userType;
 	}
 
 
@@ -73,6 +75,17 @@ public class Person implements Serializable{
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	
+
+	public String getUserType() {
+		return userType;
+	}
+
+
+	public void setUserType(String userType) {
+		this.userType = userType;
 	}
 
 

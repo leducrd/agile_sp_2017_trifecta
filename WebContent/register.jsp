@@ -46,8 +46,10 @@
 						<label for="password">*Password:</label>
 						<br>
 						<input type='password' title='Password' name="password" id="password" required="required">
-						<br>	
-		
+						<br><br>	
+						<p>I am a:</p>
+						<input type="checkbox" title="UserType" name="userType" id="rider" value="r"><label for="rider">Rider</label><br>
+						<input type="checkbox" title="UserType" name="userType" id="driver" value="d"><label for="driver">Driver</label>
 					</fieldset>
 				<br>
 				<input type="submit" name="submit" id="submit" value="Submit" class="btn btn-default"> </form>
