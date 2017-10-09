@@ -12,7 +12,7 @@
 			<br>
 		</fieldset>
 		<input type="submit" name="submit" id="submit" value="Submit" class="btn btn-default inline">
-		<button id="register" class="btn btn-default inline">Register</button>
+		<button id="register" class="btn btn-default inline" >Register</button>
 	</form>
 	
 </div>
