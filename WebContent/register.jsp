@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en-US">
@@ -45,25 +46,17 @@
 						<label for="password">*Password:</label>
 						<br>
 						<input type='password' title='Password' name="password" id="password" required="required">
-						<br>
-		
-		<!-- 				<label for="preference">*Specific Preferences:</label>
-						<br>
-		
-						<textarea name="preference" id="preference" cols="20" rows="2"></textarea>		 -->		
+						<br>	
 		
 					</fieldset>
 				<br>
 				<input type="submit" name="submit" id="submit" value="Submit" class="btn btn-default"> </form>
 				<br>
 
-				<div id="map" style="width:400px;height:400px;">
-				</div>			
-
 	</main>
 
 </div>
-		<footer class="footer text-center">
+		<footer class="container footer text-center">
 			<%@ include file="includes/footer.jsp" %>	
 		</footer>
 		
