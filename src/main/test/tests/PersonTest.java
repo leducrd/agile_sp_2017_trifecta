@@ -36,7 +36,12 @@ public class PersonTest {
 
 		final PersonDao personDao = new PersonDaoImpl();
 		
+		Person person1 = new Person("John","Johnson","715-555-5555","jjohnson@test.com", "password123");
+		
 		try {
+			
+			personDao.insertPerson(person1);
+			
 			final List<Person> people = personDao.retrievePeople();
 			
 			assertThat(people.isEmpty(), is(false));
