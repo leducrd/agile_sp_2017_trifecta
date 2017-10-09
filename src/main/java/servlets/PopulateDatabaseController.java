@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.PersonDao;
 import dao.RideDao;
-import impl.DriverReviewDaoException;
 import impl.PersonDaoException;
 import impl.PersonDaoImpl;
 import impl.RideDaoException;
@@ -37,7 +36,7 @@ public class PopulateDatabaseController extends HttpServlet {
 			request.setAttribute("message", "You were successful in populating the database.");
 			
 			target = "success.jsp";
-		} catch (PersonDaoException | RideDaoException | DriverReviewDaoException e) {
+		} catch (PersonDaoException | RideDaoException e) {
 			
 			e.printStackTrace();
 			request.setAttribute("message", "You weren't able to populate the database.");
