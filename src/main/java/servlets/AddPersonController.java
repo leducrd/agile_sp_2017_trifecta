@@ -55,7 +55,8 @@ public class AddPersonController extends HttpServlet {
 	    		  		"<br>First Name: " + firstName + 
 	    		  		"<br>Last Name: " + lastName + 
 	    		  		"<br>Phone Number: " + phone +
-	    		  		"<br>Email Address: " + email);
+	    		  		"<br>Email Address: " + email +
+	    		  		"<br> User Type: " + userType);
 	    		  target = "success.jsp";
 	    	   
 	    		   

@@ -51,7 +51,7 @@ public class PersonDaoImpl implements PersonDao {
 			
 			connection = DBUtility.createConnection();
 			
-			final String sqlStatement = "INSERT INTO people (LName, FName, Phone, Email, Password) values (?,?,?,?,?);";
+			final String sqlStatement = "INSERT INTO people (LName, FName, Phone, Email, Password, userType) values (?,?,?,?,?,?);";
 			
 			insertStatement = connection.prepareStatement(sqlStatement);
 			
@@ -60,6 +60,7 @@ public class PersonDaoImpl implements PersonDao {
 			insertStatement.setString(3, person.getPhoneNumber());
 			insertStatement.setString(4, person.getEmail());
 			insertStatement.setString(5, person.getPassword());
+			insertStatement.setString(6, person.getUserType());
 			
 			insertStatement.setQueryTimeout(DBUtility.TIMEOUT);
 			
