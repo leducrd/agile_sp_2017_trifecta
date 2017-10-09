@@ -49,10 +49,10 @@ public class LoginController extends HttpServlet {
 			
 			target = "viewAllPeople.jsp";
 			
-		} catch (PersonDaoException e) {
+		} catch (PersonDaoException | IndexOutOfBoundsException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			request.setAttribute("message", "Could not access database.");
+			request.setAttribute("message", "Sorry. We could not find an account matching those credientials. Please register or try logging in again.");
 			target = "error.jsp";
 		}
 		

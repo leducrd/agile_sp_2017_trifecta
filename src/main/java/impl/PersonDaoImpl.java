@@ -95,7 +95,7 @@ public class PersonDaoImpl implements PersonDao {
 			
 			while (resultSet.next()) {
 				
-				final Integer userID = resultSet.getInt("userID");
+				//final Integer userID = resultSet.getInt("userID");
 				final String lastName = resultSet.getString("LName");
 				final String firstName = resultSet.getString("FName");
 				final String phone = resultSet.getString("Phone");
