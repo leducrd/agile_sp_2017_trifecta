@@ -48,8 +48,8 @@
 						<input type='password' title='Password' name="password" id="password" required="required">
 						<br><br>	
 						<p>I am a:</p>
-						<input type="checkbox" title="Rider" name="rider" id="rider"><label for="rider">Rider</label><br>
-						<input type="checkbox" title="Driver" name="driver" id="driver"><label for="driver">Driver</label>
+						<input type="checkbox" title="UserType" name="userType" id="rider" value="rider"><label for="rider">Rider</label><br>
+						<input type="checkbox" title="UserType" name="userType" id="driver" value="driver"><label for="driver">Driver</label>
 					</fieldset>
 				<br>
 				<input type="submit" name="submit" id="submit" value="Submit" class="btn btn-default"> </form>

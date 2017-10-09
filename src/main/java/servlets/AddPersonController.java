@@ -33,13 +33,16 @@ public class AddPersonController extends HttpServlet {
 	    	  final String phone = request.getParameter("number");
 	    	  final String email = request.getParameter("myEmail");
 	    	  final String password = request.getParameter("password");
+	    	  final String userType = request.getParameter("userType");
+	    	  
 	    	  
 	    	  
 	    	  if(Strings.isNullOrEmpty(lastName) ||
 	    			  Strings.isNullOrEmpty(firstName) ||
 	    			  Strings.isNullOrEmpty(phone) ||
 	    			  Strings.isNullOrEmpty(email) ||
-	    			  Strings.isNullOrEmpty(password)){
+	    			  Strings.isNullOrEmpty(password)||
+	    			  Strings.isNullOrEmpty(userType)){
 	    		  request.setAttribute("message", "You must complete all fields to submit the form.");
 	    		  target = "error.jsp";
 	    	  }else{
