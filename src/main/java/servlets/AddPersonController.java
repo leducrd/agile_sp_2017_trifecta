@@ -47,7 +47,7 @@ public class AddPersonController extends HttpServlet {
 	    		  target = "error.jsp";
 	    	  }else{
 	    		  try{
-	    		  final Person person = new Person(firstName, lastName, phone, email, password);
+	    		  final Person person = new Person(firstName, lastName, phone, email, password, userType);
 	    		  final PersonDao personDao = new PersonDaoImpl();
 	    		  
 	    		  personDao.insertPerson(person);

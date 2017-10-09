@@ -14,7 +14,7 @@ import util.DBUtility;
 
 public class PersonDaoImpl implements PersonDao {
 	private static final String DROP_TABLE_PEOPLE = "DROP TABLE IF EXISTS people;";
-	private static final String CREATE_TABLE_PEOPLE = "CREATE TABLE people (userID integer primary key autoincrement, LName text, FName text, Phone text, Email text, Password text);";	
+	private static final String CREATE_TABLE_PEOPLE = "CREATE TABLE people (userID integer primary key autoincrement, LName text, FName text, Phone text, Email text, Password text, userType text);";	
 	private static final String SELECT_ALL_FROM_PERSON = "SELECT * from people;";
 	
 	@Override
@@ -101,8 +101,9 @@ public class PersonDaoImpl implements PersonDao {
 				final String phone = resultSet.getString("Phone");
 				final String email = resultSet.getString("Email");
 				final String password = resultSet.getString("Password");
+				final String userType = resultSet.getString("userType");
 				
-				people.add(new Person(firstName, lastName, phone, email, password));
+				people.add(new Person(firstName, lastName, phone, email, password, userType));
 			}
 		} catch (SQLException | ClassNotFoundException e) {
 			
