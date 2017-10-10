@@ -1,14 +1,19 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.google.common.base.Strings;
 
+import classes.Person;
 import classes.Ride;
 import dao.RideDao;
 import impl.RideDaoException;
@@ -26,6 +31,7 @@ public class RideRequestController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String target = null;
+		HttpSession session = request.getSession();
 	      try{
 	    	  final String event = request.getParameter("event");
 	    	  final String destination = request.getParameter("destination");
@@ -46,8 +52,17 @@ public class RideRequestController extends HttpServlet {
 	    		  final RideDao rideDao = new RideDaoImpl();
 	    		  
 	    		  rideDao.insertRide(ride);
-	    		  request.setAttribute("message", " ");
-	    		  target = "success.jsp";
+	    		  final List<Ride> rides = rideDao.retrieveRide();
+	  			Ride eventName;
+
+	  			final List<Ride> ridesList = rides
+	  													.stream()
+	  													.collect(Collectors.toList());
+	  			eventName = ridesList.get(0);
+	  			
+	  			session.setAttribute("rides", eventName);
+	  			
+	  			target = "goingTo.jsp";
 	    	   
 	    		   
 	    	   }catch (NumberFormatException e) {
