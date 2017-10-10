@@ -1,3 +1,4 @@
+
 			<div class="container-fluid">
 			
 				<!--  Logo -->
@@ -15,7 +16,14 @@
 					<ul class="nav navbar-nav">
 						<li><a href="index.jsp">Home</a></li>
 						<li><a href="register.jsp">Sign Up</a></li>
-						<li><a href="request.jsp">Request a Ride</a></li>
+						<c:choose>
+		  					<c:when test="${empty people}">
+								<li></li>
+							</c:when>
+							<c:otherwise>
+								<li><a href="request.jsp">Request a Ride</a></li>
+							</c:otherwise>
+						</c:choose>
 					</ul>
 				</div>
 				

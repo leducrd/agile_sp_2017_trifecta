@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en-US">
@@ -45,8 +46,10 @@
 						<label for="password">*Password:</label>
 						<br>
 						<input type='password' title='Password' name="password" id="password" required="required">
-						<br>	
-		
+						<br><br>	
+						<p>I am a:</p>
+						<input type="checkbox" title="UserType" name="userType" id="rider" value="r"><label for="rider">Rider</label><br>
+						<input type="checkbox" title="UserType" name="userType" id="driver" value="d"><label for="driver">Driver</label>
 					</fieldset>
 				<br>
 				<input type="submit" name="submit" id="submit" value="Submit" class="btn btn-default"> </form>
