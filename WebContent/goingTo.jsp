@@ -7,6 +7,26 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+ <div class="container">
+  <div class="row">
+    <div class="col">
+      Event Name:
+    </div>
+    <div class="col-6">
+      2 of 3 (wider)
+    </div>
+    
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      1 of 3
+    </div>
+    <div class="col-6">
+      2 of 3 (wider)
+    </div>
+    
+  </div>
+</div>
 </body>
 </html>
