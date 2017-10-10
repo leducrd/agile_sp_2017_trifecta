@@ -12,6 +12,7 @@ body {
 
 #jumbotronContent h1 {
 	color: white;
+	font-family: 'Merienda One', cursive;
 	text-shadow: 4px 4px 4px #000; 
 }
 
