@@ -1,13 +1,7 @@
-#aboutUsContent { 
-	padding-bottom: 30px;
-
-}
-
 body {
 	background-image: url('../images/weather.png');
 	background-repeat: repeat;	
-	font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
-	
+	font-family: Arial,Helvetica Neue,Helvetica,sans-serif;	
 }
 
 #jumbotronContent {
@@ -18,6 +12,83 @@ body {
 
 #jumbotronContent h1 {
 	color: white;
+	text-shadow: 4px 4px 4px #000; 
+}
+
+#btn-style {
+	background-color: rgba(0,0,0,0.5); 
+	color: #ead3ae;
+	box-shadow: 2px 2px 2px #000;
+	text-shadow: 1px 1px 1px #000;
+}
+
+.loginbg { 
+	width: 400px;
+	height: 155px;
+	background-color: rgba(0,0,0,0.5); 
+	box-shadow: 2px 2px 2px #000;
+	margin: 5px auto;
+	padding: 10px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-o-border-radius: 10px;
+	-mox-border-radius: 10px;
+}
+
+.loginbg input[type="text"] {
+	width: 300px;
+	height: 35px;
+	margin: 5px auto;
+	box-shadow: 1px 1px 1px #000;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	-mox-border-radius: 5px;
+}
+
+.loginbg input[type="password"] {
+	width: 300px;
+	height: 35px;
+	margin: 5px auto;
+	box-shadow: 1px 1px 1px #000;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	-mox-border-radius: 5px;
+}
+
+.loginbg input[type="submit"] {
+	width: 100px;
+	height: 35px;
+	margin: 5px auto;
+	font-weight: bold;
+	box-shadow: 2px 2px 2px #000;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	-mox-border-radius: 5px;
+}
+
+#registerBtn {
+	width: 100px;
+	height: 35px;
+	margin: 5px auto;
+	font-weight: bold;
+	box-shadow: 2px 2px 2px #000;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	-mox-border-radius: 5px;
+}
+
+#aboutUs-header {
+	text-shadow: 2px 2px 2px #fff;
+	font-weight: bold;
+	font-style: italic;
+}
+
+#aboutUsContent { 
+	padding-bottom: 30px;
 }
 
 #map {
@@ -25,21 +96,18 @@ body {
 	width: 100%;
 }
 
-
 #testimonialOuterBoarder {
 	background-image: url('../images/DiamondTexture.jpg');
 	border-radius: 2%;
 	box-shadow: 10px 10px 5px #888;
-		
 }
 
 #testimonialSlider {
-	box-shadow: 10px 0px 5px #888;
+	box-shadow: 5px 0px 3px #888;
 	
 }
 
-#testimonialSlider {	
-	box-shadow: 10px 10px 5px #888
-	
+#carousel-caption {
+	text-shadow: 1px 0px 2px #000;
 }
 

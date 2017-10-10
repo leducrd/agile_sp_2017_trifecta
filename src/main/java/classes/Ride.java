@@ -15,7 +15,6 @@ public class Ride implements Serializable{
 	private String reason;
 	public Ride() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Ride(String event, String destination, String leaveTime, String returnTime, String reason) {
 		super();
