@@ -14,7 +14,7 @@
   	<filter-class>security.RegisterFilter</filter-class>
   	<init-param>
   		<param-name>pathsToIgnore</param-name>
-  		<param-value>/assets/,/register.jsp,/RegisterUser,/index.jsp,/Login,/PopulateDB.jsp,/PopulateDatabase,/AddPerson,/success.jsp</param-value>
+  		<param-value>/assets/,/register.jsp,/RegisterUser,/index.jsp,/Login,/PopulateDB.jsp,/PopulateDatabase,/AddPerson,/success.jsp,/goingTo.jsp</param-value>
   	</init-param>
   </filter>
   <filter-mapping>

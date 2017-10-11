@@ -1,21 +1,28 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Rides</title>
+<%@ include file="includes/styles.jsp" %>
 </head>
 <body>
+<nav class="navbar navbar-inverse">
+			<%@ include file="includes/navigation.jsp" %>	
+		</nav>
  <div class="container">
-<c:forEach items="${ride}" var="ride">
+<c:choose>
+<c:when test="${empty rides}">
+		  	<h1>Error</h1>
+		    <p>Sorry, the login credentials you provided are incorrect.  Please try again or <a href="register.jsp">Sign Up</a></p>
+		  </c:when>
+<c:otherwise>
+ <c:forEach items="${rides}" var="ride">
   <div class="row">
     <div class="col">
-      Event Name:
-    </div>
-    <div class="col-6">
-		${ride.event}
+     <p> Event Name: ${ride.event}</p>
     </div>
   </div>
   <div class="row">
@@ -31,7 +38,7 @@
       Leave Time:
     </div>
     <div class="col-6">
-      ${ride.leave}
+      ${ride.leaveTime}
     </div>
   </div>
   <div class="row">
@@ -39,7 +46,7 @@
       Return Time:
     </div>
     <div class="col-6">
-      ${ride.return}
+      ${ride.returnTime}
     </div>
   </div>
   <div class="row">
@@ -50,7 +57,18 @@
       ${ride.reason}
     </div>
   </div>
+    <br>
+      
   </c:forEach>
+  </c:otherwise>
+  </c:choose>	
+
 </div>
+
+	<footer class="container footer text-center">
+	<%@ include file="includes/footer.jsp" %>	
+	</footer>
+	<%@ include file="includes/scripts.jsp" %>
+	
 </body>
 </html>
