@@ -6,17 +6,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Rides</title>
+<%@ include file="includes/styles.jsp" %>
 </head>
 <body>
-
+<nav class="navbar navbar-inverse">
+			<%@ include file="includes/navigation.jsp" %>	
+		</nav>
  <div class="container">
-<c:forEach items="${rides}" var="ride">
+<c:choose>
+<c:when test="${empty rides}">
+		  	<h1>Error</h1>
+		    <p>Sorry, the login credentials you provided are incorrect.  Please try again or <a href="register.jsp">Sign Up</a></p>
+		  </c:when>
+<c:otherwise>
+ <c:forEach items="${rides}" var="ride">
   <div class="row">
     <div class="col">
-      <p>Event Name:</p>
-    </div>
-    <div class="col-6">
-		${rides.event}
+     <p> Event Name: ${ride.event}</p>
     </div>
   </div>
   <div class="row">
@@ -24,7 +30,7 @@
       Destination:
     </div>
     <div class="col-6">
-      ${rides.destination}
+      ${ride.destination}
     </div>
   </div>
   <div class="row">
@@ -32,7 +38,7 @@
       Leave Time:
     </div>
     <div class="col-6">
-      ${rides.leave}
+      ${ride.leaveTime}
     </div>
   </div>
   <div class="row">
@@ -40,7 +46,7 @@
       Return Time:
     </div>
     <div class="col-6">
-      ${rides.return}
+      ${ride.returnTime}
     </div>
   </div>
   <div class="row">
@@ -48,17 +54,21 @@
       Reason:
     </div>
     <div class="col-6">
-      ${rides.reason}
+      ${ride.reason}
     </div>
   </div>
+    <br>
+      
   </c:forEach>
-</div>
-<footer class="container footer text-center">
-			<%@ include file="includes/footer.jsp" %>	
-		</footer>
-	
+  </c:otherwise>
+  </c:choose>	
 
-		<%@ include file="includes/scripts.jsp" %>
-		
+</div>
+
+	<footer class="container footer text-center">
+	<%@ include file="includes/footer.jsp" %>	
+	</footer>
+	<%@ include file="includes/scripts.jsp" %>
+	
 </body>
 </html>
