@@ -16,6 +16,7 @@
 					<ul class="nav navbar-nav">
 						<li><a href="index.jsp">Home</a></li>
 						<li><a href="register.jsp">Sign Up</a></li>
+						<li><a href="DriverReview.jsp">Driver Review</a></li>
 						<c:choose>
 		  					<c:when test="${empty people}">
 								<li></li>
