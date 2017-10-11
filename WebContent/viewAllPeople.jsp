@@ -6,8 +6,14 @@
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Can't Log in</title>
+		<%@ include file="includes/styles.jsp" %>
 	</head>
+	
 	<body>
+	
+		<nav class="navbar navbar-inverse">
+			<%@ include file="includes/navigation.jsp" %>	
+		</nav>
 	
 		
 		<p>${message }</p>

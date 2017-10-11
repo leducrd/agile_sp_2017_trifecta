@@ -1,18 +1,19 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Rides</title>
 </head>
 <body>
+
  <div class="container">
 <c:forEach items="${rides}" var="ride">
   <div class="row">
     <div class="col">
-      Event Name:
+      <p>Event Name:</p>
     </div>
     <div class="col-6">
 		${rides.event}
@@ -52,5 +53,12 @@
   </div>
   </c:forEach>
 </div>
+<footer class="container footer text-center">
+			<%@ include file="includes/footer.jsp" %>	
+		</footer>
+	
+
+		<%@ include file="includes/scripts.jsp" %>
+		
 </body>
 </html>
