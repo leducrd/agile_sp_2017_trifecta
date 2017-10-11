@@ -12,6 +12,7 @@ body {
 
 #jumbotronContent h1 {
 	color: white;
+	font-family: 'Merienda One', cursive;
 	text-shadow: 4px 4px 4px #000; 
 }
 
@@ -100,6 +101,12 @@ body {
 	background-image: url('../images/DiamondTexture.jpg');
 	border-radius: 2%;
 	box-shadow: 10px 10px 5px #888;
+}
+
+#testimonialOuterBoarder h3 {
+	text-shadow: 2px 2px 2px #fff;
+	font-weight: bold;
+	font-style: italic;
 }
 
 #testimonialSlider {

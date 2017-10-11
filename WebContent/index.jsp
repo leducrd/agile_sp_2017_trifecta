@@ -18,7 +18,7 @@
 		<section id="mainBannar">
 			<div class="container-fluid col-xs-12">
 				<div id="jumbotronContent" class="jumbotron text-center">	 
-					<h1>Not Yet Carpool Service</h1> 
+					<h1>Not Yet<br>Carpool Service</h1> 
 					<a class="btn btn-lg" id="btn-style" href="#loginForm" roll="button" data-toggle="collapse">Login Now!</a>	
 					<%@ include file="includes/loginForm.jsp" %>	
 				</div>
@@ -47,7 +47,7 @@
 			</section>
 											
 		</div>
-		<div class="container col-xs-10 col-xs-offset-1" id="testimonialOuterBoarder">
+		<div class="container col-xs-10 col-xs-offset-1 text-center" id="testimonialOuterBoarder">
 			<h3><B>Testimonials</B></h3>		
 			<div class="container">
 				<div class="row">
@@ -108,8 +108,12 @@
 			</div>
 		</div>
 		
-		<footer class="container footer text-center">
-			<%@ include file="includes/footer.jsp" %>	
+		</div>
+		
+		<footer class="container col-xs-12 text-center" id="footer">
+			<div class="row">
+				<%@ include file="includes/footer.jsp" %>
+			</div>	
 		</footer>
 	
 
