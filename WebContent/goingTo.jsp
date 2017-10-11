@@ -5,17 +5,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Rides</title>
 </head>
 <body>
  <div class="container">
-<c:forEach items="${ride}" var="ride">
+<c:forEach items="${rides}" var="ride">
   <div class="row">
     <div class="col">
       Event Name:
     </div>
     <div class="col-6">
-		${ride.event}
+		${rides.event}
     </div>
   </div>
   <div class="row">
@@ -23,7 +23,7 @@
       Destination:
     </div>
     <div class="col-6">
-      ${ride.destination}
+      ${rides.destination}
     </div>
   </div>
   <div class="row">
@@ -31,7 +31,7 @@
       Leave Time:
     </div>
     <div class="col-6">
-      ${ride.leave}
+      ${rides.leave}
     </div>
   </div>
   <div class="row">
@@ -39,7 +39,7 @@
       Return Time:
     </div>
     <div class="col-6">
-      ${ride.return}
+      ${rides.return}
     </div>
   </div>
   <div class="row">
@@ -47,7 +47,7 @@
       Reason:
     </div>
     <div class="col-6">
-      ${ride.reason}
+      ${rides.reason}
     </div>
   </div>
   </c:forEach>

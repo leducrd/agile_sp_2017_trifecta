@@ -53,14 +53,9 @@ public class RideRequestController extends HttpServlet {
 	    		  
 	    		  rideDao.insertRide(ride);
 	    		  final List<Ride> rides = rideDao.retrieveRide();
-	  			Ride eventName;
-
-	  			final List<Ride> ridesList = rides
-	  													.stream()
-	  													.collect(Collectors.toList());
-	  			eventName = ridesList.get(0);
 	  			
-	  			session.setAttribute("rides", eventName);
+	  			
+	  			session.setAttribute("rides", rides);
 	  			
 	  			target = "goingTo.jsp";
 	    	   
