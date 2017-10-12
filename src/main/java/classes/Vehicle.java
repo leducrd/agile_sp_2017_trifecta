@@ -79,6 +79,12 @@ public class Vehicle {
 	public void setCanSmoke(boolean canSmoke) {
 		this.canSmoke = canSmoke;
 	}
+
+	@Override
+	public String toString() {
+		return "Vehicle [userID=" + userID + ", make=" + make + ", model=" + model + ", year=" + year + ", color="
+				+ color + ", maxSeats=" + maxSeats + ", canSmoke=" + canSmoke + "]";
+	}
 	
 	
 }
