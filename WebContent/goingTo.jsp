@@ -54,12 +54,12 @@
 					  </div>
 					  
 					  <div class="row">
-					    <div class="col">
-					      Reason:
+					  	<div class="col">
+					    		Reason:
 					    </div>
-					    <div class="col-6">
-					      ${ride.reason}
-					    </div>
+						<div class="col-6">
+							${ride.reason}
+						</div>
 					  </div>
 					  <br>
 	      
