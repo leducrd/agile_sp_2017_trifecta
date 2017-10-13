@@ -49,7 +49,41 @@
 							<br><br>	
 							<p>I am a:</p>
 							<input type="checkbox" title="UserType" name="userType" id="rider" value="r"><label for="rider">Rider</label><br>
-							<input type="checkbox" title="UserType" name="userType" id="driver" value="d"><label for="driver">Driver</label>
+							<input type="checkbox" title="UserType" name="userType" id="driver" value="d" data-toggle="collapse" data-target="#driverAdditionalInfo"><label for="driver">Driver</label>
+							
+<!-- 							<div class="collapse" id="driverAdditionalInfo">
+							
+								<h5>Please provide the following information to become a driver</h3>
+							
+								<label for="carMake">Make</label>
+								<br>
+								<input type="text" size="50" required="required">
+								<br>
+								
+								<label for="carModel">Model</label>
+								<br>
+								<input type="text" size="50" required="required">
+								<br>
+								
+								<label for="carMake">Year</label>
+								<br>
+								<input type="text" size="50" required="required">
+								<br>
+								
+								<label for="carMake">Color</label>
+								<br>
+								<input type="text" size="50" required="required">
+								<br>
+								
+								<label for="carMake">Max Seats</label>
+								<br>
+								<input type="number" size="50" required="required">
+								<br>
+								
+								<label for="carMake">Can Smoke?</label>
+								
+							</div> -->
+							
 						</fieldset>
 						<br>
 						<input type="submit" name="submit" id="submit" value="Submit" class="btn btn-default"> 
