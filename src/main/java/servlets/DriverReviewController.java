@@ -19,7 +19,7 @@ import impl.DriverReviewDaoImpl;
 	/**
 	 * Servlet implementation class RideRequestController
 	 */
-	@WebServlet("/RideRequest")
+	@WebServlet("/DriverReview")
 	public class DriverReviewController extends HttpServlet {
 		private static final long serialVersionUID = 1L;
 

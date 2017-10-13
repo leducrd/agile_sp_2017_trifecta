@@ -19,7 +19,7 @@ public class DBUtility {
 	
 	public static final int TIMEOUT = 30;
 	
-	public static final String DRIVER_NAME = "org.sqlite.JDBC";
+	public static final String DRIVER_NAME = "org.sqlite.jdbc";
 	
 	public static final String CONNECTION = "jdbc:sqlite:notYet.db";
 
