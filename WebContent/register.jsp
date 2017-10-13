@@ -51,7 +51,7 @@
 							<input type="checkbox" title="UserType" name="userType" id="rider" value="r"><label for="rider">Rider</label><br>
 							<input type="checkbox" title="UserType" name="userType" id="driver" value="d" data-toggle="collapse" data-target="#driverAdditionalInfo"><label for="driver">Driver</label>
 							
-							<div class="collapse" id="driverAdditionalInfo">
+<!-- 							<div class="collapse" id="driverAdditionalInfo">
 							
 								<h5>Please provide the following information to become a driver</h3>
 							
@@ -82,7 +82,7 @@
 								
 								<label for="carMake">Can Smoke?</label>
 								
-							</div>
+							</div> -->
 							
 						</fieldset>
 						<br>
