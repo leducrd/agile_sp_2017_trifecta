@@ -1,10 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
 Built-By: Denver
 Build-Jdk: 1.8.0_121
-=======
-Built-By: netter
-Build-Jdk: 1.8.0_131
->>>>>>> 3360313a79de6959978e9f4d4b19457073f1f7ac
 Created-By: Maven Integration for Eclipse
 
