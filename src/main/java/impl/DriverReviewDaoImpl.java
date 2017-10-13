@@ -20,7 +20,7 @@ public class DriverReviewDaoImpl implements DriverReviewDao {
 	
 	
 	@Override
-	public void createDatabase() throws DriverReviewDaoException {
+	public void createDriverReviewTable() throws DriverReviewDaoException {
 		
 		Connection connection = null;
 		Statement statement = null;
