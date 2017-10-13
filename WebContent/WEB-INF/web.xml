@@ -18,7 +18,7 @@
   	</init-param>
   </filter>
   <filter-mapping>
-  	<filter-name>RegisterFilter</filter-name>
-  	<url-pattern>/*</url-pattern>
+    <filter-name>RegisterFilter</filter-name>
+    <url-pattern>/*</url-pattern>
   </filter-mapping>
 </web-app>

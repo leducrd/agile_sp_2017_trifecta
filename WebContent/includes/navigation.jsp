@@ -15,25 +15,19 @@
 				<div class="collapse navbar-collapse" id="mainNavBar">
 					<ul class="nav navbar-nav">
 						<li><a href="index.jsp">Home</a></li>
-						<li><a href="DriverReview.jsp">Driver Review</a></li>
-						
+					
 						<c:choose>
 							<c:when test="${empty people}">
 								<li><a href="register.jsp">Sign Up</a></li>								
 							</c:when>
 							<c:otherwise>
-								<li></li>
+								<li><a href="userProfile.jsp">Profile</a></li>
+								<li><a href="request.jsp">Request a Ride</a></li>
+								<li><a href="DriverReview.jsp">Driver Review</a></li>
+								<li><a>Log Out</a></li>
 							</c:otherwise>
 						</c:choose>
 						
-						<c:choose>
-		  					<c:when test="${empty people}">
-								<li></li>
-							</c:when>
-							<c:otherwise>
-								<li><a href="request.jsp">Request a Ride</a></li>
-							</c:otherwise>
-						</c:choose>
 					</ul>
 				</div>
 				

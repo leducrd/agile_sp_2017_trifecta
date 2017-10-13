@@ -7,9 +7,11 @@ import impl.DriverReviewDaoException;
 
 public interface DriverReviewDao {
 
-	void createDatabase() throws DriverReviewDaoException;
+	void createDriverReviewTable() throws DriverReviewDaoException;
 	
-	void insertDriverReview(DriverReview driverReview) throws DriverReviewDaoException;
+	static void insertDriverReview(DriverReview driverReview) throws DriverReviewDaoException {
+		
+	}
 	
 	List<DriverReview> retrieveDriverReview() throws DriverReviewDaoException;
 }
