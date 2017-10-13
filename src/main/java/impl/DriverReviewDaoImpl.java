@@ -15,7 +15,7 @@ import util.DBUtility;
 public class DriverReviewDaoImpl implements DriverReviewDao {
 
 	private static final String DROP_TABLE_DRIVERREVIEW = "DROP TABLE IF EXISTS driverReview;";
-	private static final String CREATE_TABLE_DRIVERREVIEW = "CREATE TABLE driverReview (userID integer primary key autoincrement, rating integer, review text);";
+	private static final String CREATE_TABLE_DRIVERREVIEW = "CREATE TABLE driverReview (userID integer primary key autoincrement,driverName text, rating integer, review text);";
 	private static final String SELECT_ALL_FROM_DRIVERREVIEW = "SELECT * from driverReview;";
 	
 	
@@ -56,11 +56,13 @@ public class DriverReviewDaoImpl implements DriverReviewDao {
 			
 			connection = DBUtility.createConnection();
 			
-			final String sqlStatement = "INSERT INTO driverReview (Rating, Review) values (?,?);";
+			final String sqlStatement = "INSERT INTO driverReview (driverName, Rating, Review) values (?,?,?);";
 			
+			insertStatement = connection.prepareStatement(sqlStatement);
 			
-			insertStatement.setInt(1, driverReview.getRating());
-			insertStatement.setString(2, driverReview.getReview());
+			insertStatement.setString(1, driverReview.getReview());
+			insertStatement.setInt(2, driverReview.getRating());
+			insertStatement.setString(3, driverReview.getReview());
 			
 			insertStatement.setQueryTimeout(DBUtility.TIMEOUT);
 			insertStatement.executeUpdate();
