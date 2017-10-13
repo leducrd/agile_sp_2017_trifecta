@@ -6,6 +6,7 @@ public class DriverReview implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
+	private String driverName;
 	private int rating;
 	private String review;
 	
@@ -14,9 +15,10 @@ public class DriverReview implements Serializable{
 		
 	}
 	
-	public DriverReview(int rating, String review){
+	public DriverReview(String driverName, int rating, String review){
 		super();
 		
+		this.driverName = driverName;
 		this.rating = rating;
 		this.review = review;
 		
@@ -44,9 +46,18 @@ public class DriverReview implements Serializable{
 	}
 
 
+	public String getDriverName() {
+		return driverName;
+	}
+
+	public void setDriverName(String driverName) {
+		this.driverName = driverName;
+	}
+
 	@Override
 	public String toString() {
-		return "DriverReview [rating=" + rating + ", review=" + review + "]";
+		return "DriverReview [driverName=" + driverName + ", rating=" + rating + ", review=" + review + "]";
 	}
+	
 
 }
