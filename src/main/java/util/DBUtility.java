@@ -5,8 +5,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import dao.DriverReviewDao;
 import dao.PersonDao;
 import dao.RideDao;
+import impl.DriverReviewDaoException;
+import impl.DriverReviewDaoImpl;
 import impl.PersonDaoException;
 import impl.PersonDaoImpl;
 import impl.RideDaoException;
@@ -43,12 +46,14 @@ public class DBUtility {
 		}
 	}
 	
-	public static void createDatabase() throws PersonDaoException, RideDaoException {
+	public static void createDatabase() throws PersonDaoException, RideDaoException, DriverReviewDaoException{
 		
 		final PersonDao personDao = new PersonDaoImpl();
 		final RideDao rideDao = new RideDaoImpl();
+		final DriverReviewDao driverReviewDao = new DriverReviewDaoImpl();
 		
 		personDao.createPeopleTable();
 		rideDao.createRideRequestTable();
+		driverReviewDao.createDriverReviewTable();
 	}
 }
