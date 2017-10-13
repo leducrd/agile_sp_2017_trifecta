@@ -9,7 +9,9 @@ public interface DriverReviewDao {
 
 	void createDriverReviewTable() throws DriverReviewDaoException;
 	
-	void insertDriverReview(DriverReview driverReview) throws DriverReviewDaoException;
+	static void insertDriverReview(DriverReview driverReview) throws DriverReviewDaoException {
+		
+	}
 	
 	List<DriverReview> retrieveDriverReview() throws DriverReviewDaoException;
 }

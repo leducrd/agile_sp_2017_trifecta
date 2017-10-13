@@ -15,9 +15,10 @@ public class DriverReview implements Serializable{
 		
 	}
 	
-	public DriverReview(int rating, String review){
+	public DriverReview(String driverName, int rating, String review){
 		super();
 		
+		this.driverName = driverName;
 		this.rating = rating;
 		this.review = review;
 		

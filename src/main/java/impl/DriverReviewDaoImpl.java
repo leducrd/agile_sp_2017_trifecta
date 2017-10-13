@@ -60,7 +60,7 @@ public class DriverReviewDaoImpl implements DriverReviewDao {
 			
 			insertStatement = connection.prepareStatement(sqlStatement);
 			
-			insertStatement.setString(1, driverReview.getReview());
+			insertStatement.setString(1, driverReview.getDriverName());
 			insertStatement.setInt(2, driverReview.getRating());
 			insertStatement.setString(3, driverReview.getReview());
 			
@@ -95,10 +95,11 @@ public class DriverReviewDaoImpl implements DriverReviewDao {
 			
 			while (resultSet.next()) {
 				
+				final String driverName = resultSet.getString("driverName");
 				final Integer rating = resultSet.getInt("rating");
 				final String review = resultSet.getString("review");
 				
-				driverReview.add(new DriverReview(rating, review));
+				driverReview.add(new DriverReview(driverName, rating, review));
 				
 			}
 			
