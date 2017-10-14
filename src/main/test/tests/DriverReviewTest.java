@@ -20,7 +20,8 @@ public class DriverReviewTest {
 	@Test
 	public void driverReviewTest() {
 		
-		DriverReview driverReview1 = new DriverReview(4, "The driver was excellent!");
+		DriverReview driverReview1 = new DriverReview("John", 4, "The driver was excellent!");
+		assertThat(driverReview1.getDriverName(), is("John"));
 		assertThat(driverReview1.getRating(), is(4));
 		assertThat(driverReview1.getReview(), is("The driver was excellent!"));
 		
