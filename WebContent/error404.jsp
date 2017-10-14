@@ -6,6 +6,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="description" content="This is a JSP page that shows a 404 response page for when a 
 				page is not found.">
+		<%@ include file="includes/styles.jsp" %>
 		<title>404 - Page Not Found</title>
 	</head>
 	<body>

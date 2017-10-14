@@ -5,7 +5,7 @@
 		<title>Error</title>
 		<meta name="description" content="This is a JSP page that shows an Error response
 		page for when a problem occurs.">
-	
+		<%@ include file="includes/styles.jsp" %>
 	</head>
 	<body>
 		<div class="container">
