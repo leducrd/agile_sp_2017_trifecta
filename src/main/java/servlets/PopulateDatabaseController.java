@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import impl.DriverReviewDaoException;
 import impl.PersonDaoException;
 import impl.RideDaoException;
+import impl.VehicleDaoException;
 import util.DBUtility;
 
 /**
@@ -32,10 +33,19 @@ public class PopulateDatabaseController extends HttpServlet {
 			request.setAttribute("message", "You were successful in populating the database.");
 			
 			target = "success.jsp";
-		} catch (PersonDaoException | RideDaoException | DriverReviewDaoException e) {
+		} catch (PersonDaoException | RideDaoException | DriverReviewDaoException | VehicleDaoException e) {
 			
 			e.printStackTrace();
-			request.setAttribute("message", "You weren't able to populate the database.");
+			
+			if (e instanceof PersonDaoException) {
+				request.setAttribute("message", "Could not create people table.");
+			} else if (e instanceof RideDaoException) {
+				request.setAttribute("message", "Could not create rideRequest table.");
+			} else if (e instanceof DriverReviewDaoException) {
+				request.setAttribute("message", "Could not create driverReview table.");
+			} else if (e instanceof VehicleDaoException) {
+				request.setAttribute("message", "Could not create vehicle table.");
+			}
 			
 			target = "error.jsp";
 		}

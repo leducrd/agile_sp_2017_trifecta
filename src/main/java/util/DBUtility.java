@@ -15,6 +15,7 @@ import impl.PersonDaoException;
 import impl.PersonDaoImpl;
 import impl.RideDaoException;
 import impl.RideDaoImpl;
+import impl.VehicleDaoException;
 import impl.VehicleDaoImpl;
 
 public class DBUtility {
@@ -48,7 +49,7 @@ public class DBUtility {
 		}
 	}
 	
-	public static void createDatabase() throws PersonDaoException, RideDaoException, DriverReviewDaoException{
+	public static void createDatabase() throws PersonDaoException, RideDaoException, DriverReviewDaoException, VehicleDaoException{
 		
 		final PersonDao personDao = new PersonDaoImpl();
 		final RideDao rideDao = new RideDaoImpl();
