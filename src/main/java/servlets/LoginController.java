@@ -47,7 +47,7 @@ public class LoginController extends HttpServlet {
 			
 			session.setAttribute("people", loggedInUser);
 			
-			target = "viewAllPeople.jsp";
+			target = "userProfile.jsp";
 			
 		} catch (PersonDaoException | IndexOutOfBoundsException e) {
 			// TODO Auto-generated catch block
