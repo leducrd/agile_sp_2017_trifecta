@@ -1,6 +1,11 @@
 package impl;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 import dao.VehicleDao;
+import util.DBUtility;
 
 public class VehicleDaoImpl implements VehicleDao {
 	
@@ -11,6 +16,25 @@ public class VehicleDaoImpl implements VehicleDao {
 	@Override
 	public void createVehicleTable() {
 		
+		Connection connection = null;
+		Statement statement = null;
+		
+		try {
+			connection = DBUtility.createConnection();
+			statement = connection.createStatement();
+			
+			statement.setQueryTimeout(DBUtility.TIMEOUT);
+			
+			statement.executeUpdate(DROP_TABLE_VEHICLE);
+			statement.executeUpdate(CREATE_TABLE_VEHICLE);
+
+		} catch(ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+			
+			//throw new PersonDaoException("Error: Unable to create people table");
+		} finally {
+			DBUtility.closeConnection(connection, statement);
+		}
 		
 	}
 	
