@@ -8,12 +8,14 @@ import java.sql.Statement;
 import dao.DriverReviewDao;
 import dao.PersonDao;
 import dao.RideDao;
+import dao.VehicleDao;
 import impl.DriverReviewDaoException;
 import impl.DriverReviewDaoImpl;
 import impl.PersonDaoException;
 import impl.PersonDaoImpl;
 import impl.RideDaoException;
 import impl.RideDaoImpl;
+import impl.VehicleDaoImpl;
 
 public class DBUtility {
 	
@@ -51,9 +53,11 @@ public class DBUtility {
 		final PersonDao personDao = new PersonDaoImpl();
 		final RideDao rideDao = new RideDaoImpl();
 		final DriverReviewDao driverReviewDao = new DriverReviewDaoImpl();
+		final VehicleDao vehicleDao = new VehicleDaoImpl();
 		
 		personDao.createPeopleTable();
 		rideDao.createRideRequestTable();
 		driverReviewDao.createDriverReviewTable();
+		vehicleDao.createVehicleTable();
 	}
 }
