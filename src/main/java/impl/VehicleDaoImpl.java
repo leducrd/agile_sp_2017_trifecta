@@ -1,9 +1,11 @@
 package impl;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import classes.Vehicle;
 import dao.VehicleDao;
 import util.DBUtility;
 
@@ -31,19 +33,50 @@ public class VehicleDaoImpl implements VehicleDao {
 		} catch(ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 			
-			//throw new PersonDaoException("Error: Unable to create people table");
+			//throw new VehicleDaoException("Error: Unable to create people table");
 		} finally {
 			DBUtility.closeConnection(connection, statement);
 		}
 		
 	}
-
+	
 	@Override
-	public void insertVehicle() throws VehicleDaoException {
+	public void insertVehicle(Vehicle vehicle) throws VehicleDaoException {
 		
+		Connection connection = null;
+		PreparedStatement insertStatement = null;
+		
+		try {
+			connection = DBUtility.createConnection();
+			
+			final String sqlStatement = "INSERT INTO vehicle (userID, make, model, year, color, maxSeats, canSmoke) values (?,?,?,?,?,?,?);";
+			
+			insertStatement = connection.prepareStatement(sqlStatement);
+			
+			insertStatement.setInt(1, vehicle.getUserID());
+			insertStatement.setString(2, vehicle.getMake());
+			insertStatement.setString(3, vehicle.getModel());
+			insertStatement.setInt(4, vehicle.getYear());
+			insertStatement.setString(5, vehicle.getColor());
+			insertStatement.setInt(6, vehicle.getMaxSeats());
+			insertStatement.setBoolean(7, vehicle.isCanSmoke());
+			
+			insertStatement.setQueryTimeout(DBUtility.TIMEOUT);
+			
+			insertStatement.executeUpdate();
+			
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			
+			e.printStackTrace();
+			
+			throw new VehicleDaoException("Error: Unable to insert vehicle into database.");
+		} finally {
+			DBUtility.closeConnection(connection, insertStatement);
+		}
 		
 	}
-	
+
 	
 
 }

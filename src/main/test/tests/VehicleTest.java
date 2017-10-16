@@ -9,16 +9,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import org.junit.Test;
 
-import classes.AuthenticatedUser;
 import classes.Vehicle;
-import dao.AuthenticatedUserDao;
 import dao.VehicleDao;
-import impl.AuthenticatedUserDaoImpl;
+import impl.VehicleDaoException;
 import impl.VehicleDaoImpl;
 import util.DBUtility;
 
@@ -103,7 +98,7 @@ public class VehicleTest {
 			// assert that query2 = query1 + 1
 			assertThat(countAfter, is(countBefore + 1));
 			
-		} catch (SQLException | ClassNotFoundException e) {
+		} catch (SQLException | ClassNotFoundException | VehicleDaoException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
