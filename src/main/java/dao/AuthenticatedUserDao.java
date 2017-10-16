@@ -1,8 +1,9 @@
 package dao;
 
 import classes.AuthenticatedUser;
+import impl.AuthenticatedUserException;
 
 public interface AuthenticatedUserDao {
 
-	AuthenticatedUser retrieveUser();
+	AuthenticatedUser retrieveUser() throws AuthenticatedUserException;
 }
