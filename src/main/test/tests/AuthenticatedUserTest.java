@@ -17,7 +17,7 @@ import impl.PersonDaoImpl;
 public class AuthenticatedUserTest {
 	
 	@Test
-	public void testAuthenticatedUser() {
+	public void authenticatedUserTest() {
 		AuthenticatedUser authUser = new AuthenticatedUser(1, "George", "Baliey", "123-456-7890", "george.bailey@gmail.com", "pass123", "d");
 		assertThat(authUser.getUserID(), is(1));
 		assertThat(authUser.getFirstName(), is("George"));
@@ -42,25 +42,18 @@ public class AuthenticatedUserTest {
 		// retrieve person from table based on email and password
 		final String userName = testPerson.getEmail();
 		final String password = testPerson.getPassword();
-		List<Person> people = personDao.retrievePeople();
-		Person authorizedUser = new AuthenticatedUser();
+		AuthenticatedUserDao authUserDao = new AuthenticatedUserDaoImpl();
 		
-		final List<Person> exactPerson = people
-													.stream()
-													.filter((person) -> person.getEmail().equals(userName))
-													.filter((person) -> person.getPassword().equals(password))
-													.collect(Collectors.toList());
+		AuthenticatedUser authUser = authUserDao.retrieveUser(userName, password);
 		
-		// insert that person into an authenticated user object
-		authorizedUser = exactPerson.get(0);
 		
 		// assert that authenticated user pulled from database is the same user that was inserted
-		assertThat(authorizedUser.getFirstName(), is(testPerson.getFirstName()));
-		assertThat(authorizedUser.getLastName(), is(testPerson.getLastName()));
-		assertThat(authorizedUser.getPhoneNumber(), is(testPerson.getPhoneNumber()));
-		assertThat(authorizedUser.getEmail(), is(testPerson.getEmail()));
-		assertThat(authorizedUser.getPassword(), is(testPerson.getPassword()));
-		assertThat(authorizedUser.getUserType(), is(testPerson.getUserType()));
+		assertThat(authUser.getFirstName(), is(testPerson.getFirstName()));
+		assertThat(authUser.getLastName(), is(testPerson.getLastName()));
+		assertThat(authUser.getPhoneNumber(), is(testPerson.getPhoneNumber()));
+		assertThat(authUser.getEmail(), is(testPerson.getEmail()));
+		assertThat(authUser.getPassword(), is(testPerson.getPassword()));
+		assertThat(authUser.getUserType(), is(testPerson.getUserType()));
 		
 	}
 	
