@@ -1,24 +1,28 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en-US">
 	<head>
-		<title>404 - Page Not Found</title>
+		<title>Error-404</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<%@ include file="includes/styles.jsp" %>
 	</head>
 	
 	<body>
-		<div class="container col-xs-6">
-			<img src="" class="rounded float-left" alt="">
+	
+		<nav class="navbar navbar-inverse">
+			<%@ include file="includes/navigation.jsp" %>	
+		</nav>
+		
+		<div class="container col-md-6">
+			<img src="assets/images/funnyMechanic.jpg" class="img-responsive rounded" alt="">
 		</div>
 		
-		<div class="container col-xs-6 pull-right">
+		<div class="container col-md-6 pull-right" text="center">
 				<div class="hero-unit"> 
-					<h1>404</h1>
-				</div>
-				<div class="container">
-					<p>This is not the page you are looking for.</p>
-					<p>To continue, click the Back button.</p>
+					<h1>Oh No!</h1>
+					<p>The page you're looking for can't be found.</p>
+					<p>Don't worry, we're hard at work fixing the problem!</p>
 				</div>
 		</div>
 		
