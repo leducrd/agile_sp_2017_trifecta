@@ -37,6 +37,12 @@ public class VehicleDaoImpl implements VehicleDao {
 		}
 		
 	}
+
+	@Override
+	public void insertVehicle() throws VehicleDaoException {
+		
+		
+	}
 	
 	
 
