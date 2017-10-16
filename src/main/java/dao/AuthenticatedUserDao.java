@@ -5,5 +5,5 @@ import impl.AuthenticatedUserException;
 
 public interface AuthenticatedUserDao {
 
-	AuthenticatedUser retrieveUser() throws AuthenticatedUserException;
+	AuthenticatedUser retrieveUser(final String username, final String password) throws AuthenticatedUserException;
 }
