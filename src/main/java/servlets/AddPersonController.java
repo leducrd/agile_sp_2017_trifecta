@@ -57,6 +57,9 @@ public class AddPersonController extends HttpServlet {
 	    		  		"<br>Phone Number: " + phone +
 	    		  		"<br>Email Address: " + email +
 	    		  		"<br> User Type: " + userType);
+	    		  
+	    		  //TODO: If Driver check box checked, run insertVehicle method.
+	    		  
 	    		  target = "success.jsp";
 	    	   
 	    		   

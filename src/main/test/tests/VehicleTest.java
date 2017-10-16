@@ -57,5 +57,10 @@ public class VehicleTest {
 		}
 		
 	}
+	
+	@Test
+	public void insertVehicleTest() {
+		
+	}
 
 }
