@@ -15,11 +15,7 @@
 		</nav>
 		
 		<div class="container col-md-6">
-<<<<<<< HEAD
 			<img src="assets/images/funnyMechanic.png" class="img-responsive rounded" alt="">
-=======
-			<img src="assets/images/funnyMechanic.jpg" class="img-responsive rounded" alt="">
->>>>>>> master
 		</div>
 		
 		<div class="container col-md-6 pull-right" text="center">
