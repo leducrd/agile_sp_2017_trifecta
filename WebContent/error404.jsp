@@ -2,16 +2,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta name="description" content="This is a JSP page that shows a 404 response page for when a 
-				page is not found.">
-		<%@ include file="includes/styles.jsp" %>
-=======
->>>>>>> master
->>>>>>> index
 		<title>404 - Page Not Found</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<%@ include file="includes/styles.jsp" %>
