@@ -2,14 +2,14 @@ package tests;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.junit.Test;
 
 import classes.AuthenticatedUser;
 import classes.Person;
+import dao.AuthenticatedUserDao;
 import dao.PersonDao;
+import impl.AuthenticatedUserDaoImpl;
+import impl.AuthenticatedUserException;
 import impl.PersonDaoException;
 import impl.PersonDaoImpl;
 
@@ -44,16 +44,25 @@ public class AuthenticatedUserTest {
 		final String password = testPerson.getPassword();
 		AuthenticatedUserDao authUserDao = new AuthenticatedUserDaoImpl();
 		
-		AuthenticatedUser authUser = authUserDao.retrieveUser(userName, password);
+		AuthenticatedUser authUser;
+		
+		try {
+			authUser = authUserDao.retrieveUser(userName, password);
+			
+			// assert that authenticated user pulled from database is the same user that was inserted
+			assertThat(authUser.getFirstName(), is(testPerson.getFirstName()));
+			assertThat(authUser.getLastName(), is(testPerson.getLastName()));
+			assertThat(authUser.getPhoneNumber(), is(testPerson.getPhoneNumber()));
+			assertThat(authUser.getEmail(), is(testPerson.getEmail()));
+			assertThat(authUser.getPassword(), is(testPerson.getPassword()));
+			assertThat(authUser.getUserType(), is(testPerson.getUserType()));
+		} catch (AuthenticatedUserException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
-		// assert that authenticated user pulled from database is the same user that was inserted
-		assertThat(authUser.getFirstName(), is(testPerson.getFirstName()));
-		assertThat(authUser.getLastName(), is(testPerson.getLastName()));
-		assertThat(authUser.getPhoneNumber(), is(testPerson.getPhoneNumber()));
-		assertThat(authUser.getEmail(), is(testPerson.getEmail()));
-		assertThat(authUser.getPassword(), is(testPerson.getPassword()));
-		assertThat(authUser.getUserType(), is(testPerson.getUserType()));
+		
 		
 	}
 	

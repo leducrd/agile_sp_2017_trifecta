@@ -22,6 +22,7 @@
 				
 			        <img src="assets/images/profile_default.jpg" alt="default profile image" class="img-rounded"/>
 					<h1>${people.firstName}${people.lastName}</h1>
+					<p>UserID: ${people.userID} </p>
 			        <p>Phone: ${people.phoneNumber}</p>
 			        <p>Email: ${people.email}</p>
 			        <p>Password: ${people.password}</p>
