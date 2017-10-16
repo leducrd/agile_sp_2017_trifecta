@@ -9,9 +9,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.junit.Test;
 
+import classes.AuthenticatedUser;
 import classes.Vehicle;
+import dao.AuthenticatedUserDao;
+import dao.VehicleDao;
+import impl.AuthenticatedUserDaoImpl;
+import impl.VehicleDaoImpl;
 import util.DBUtility;
 
 public class VehicleTest {
@@ -60,16 +68,49 @@ public class VehicleTest {
 	
 	@Test
 	public void insertVehicleTest() {
-		
+
 		// Create a new vehicle
+		Vehicle car = new Vehicle(1, "Audi", "Nugget", 2008, "Pink", 4, true);
+		VehicleDao vehicleDao = new VehicleDaoImpl();
 		
 		// query1 = current vehicle table row count
 		
-		// insertVehicle
+		Connection connection = null;
+		Statement statement = null;
 		
-		// query2 = new vehicle table row count
+		try {
+			connection = DBUtility.createConnection();
+			statement = connection.createStatement();
+			
+			statement.executeUpdate("DROP TABLE IF EXISTS vehicle;");
+			statement.executeUpdate("CREATE TABLE vehicle (vehicleID integer primary key autoincrement, userID int, make text, model text, year int, color text, maxSeats int, boolean canSmoke);");
+			
+			// query1 = current vehicle table row count
+			ResultSet resultSet = statement.executeQuery("SELECT COUNT(*) AS rowCount FROM vehicle");
+			resultSet.next();
+			
+			int countBefore = resultSet.getInt("rowCount");
+			
+			// insertVehicle
+			vehicleDao.insertVehicle(car);
+			
+			// query2 = new vehicle table row count
+			resultSet = statement.executeQuery("SELECT COUNT(*) AS rowCount FROM vehicle");
+			resultSet.next();
+			
+			int countAfter = resultSet.getInt("rowCount");
+			
+			// assert that query2 = query1 + 1
+			assertThat(countAfter, is(countBefore + 1));
+			
+		} catch (SQLException | ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			DBUtility.closeConnection(connection, statement);
+		};
 		
-		// assert that query2 = query1 + 1
+		
 	}
 
 }
