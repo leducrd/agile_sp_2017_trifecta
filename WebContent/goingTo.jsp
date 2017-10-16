@@ -14,8 +14,8 @@
 	 	<div class="container col-xs-8 col-xs-offset-2">
 			<c:choose>
 				<c:when test="${empty rides}">
-			  	<h1>Error</h1>
-			    <p>Sorry, the login credentials you provided are incorrect.  Please try again or <a href="register.jsp">Sign Up</a></p>
+			  	<h1>Empty Database</h1>
+			    <p>Sorry, there are no scheduled rides to display. Please try again or <a href="register.jsp">Sign Up</a></p>
 			  	</c:when>
 			  	
 				<c:otherwise>
