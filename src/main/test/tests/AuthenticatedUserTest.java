@@ -16,6 +16,18 @@ import impl.PersonDaoImpl;
 public class AuthenticatedUserTest {
 	
 	@Test
+	public void testAuthenticatedUser() {
+		Person authUser = new AuthenticatedUser(1, "George", "Baliey", "123-456-7890", "george.bailey@gmail.com", "pass123", "d");
+		assertThat(authUser.getUserID(), is(1));
+		assertThat(authUser.getFirstName(), is("John"));
+		assertThat(authUser.getLastName(), is("Johnson"));
+		assertThat(authUser.getPhoneNumber(), is("715-555-5555"));
+		assertThat(authUser.getEmail(), is("jjohnson@test.com"));
+		assertThat(authUser.getPassword(), is("password123"));
+		assertThat(authUser.getUserType(), is("r"));
+	}
+	
+	@Test
 	public void retrieveAuthUserTest() throws PersonDaoException {
 		// create person
 		Person testPerson = new Person("Bob","Dole","715-555-5555","bobTest@test.com", "password123", "r");
