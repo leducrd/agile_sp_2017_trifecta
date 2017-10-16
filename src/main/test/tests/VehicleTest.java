@@ -61,6 +61,15 @@ public class VehicleTest {
 	@Test
 	public void insertVehicleTest() {
 		
+		// Create a new vehicle
+		
+		// query1 = current vehicle table row count
+		
+		// insertVehicle
+		
+		// query2 = new vehicle table row count
+		
+		// assert that query2 = query1 + 1
 	}
 
 }
