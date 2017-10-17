@@ -2,7 +2,6 @@ package servlets;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,7 +12,6 @@ import javax.servlet.http.HttpSession;
 
 import com.google.common.base.Strings;
 
-import classes.Person;
 import classes.Ride;
 import dao.RideDao;
 import impl.RideDaoException;
