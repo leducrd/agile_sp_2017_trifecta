@@ -161,4 +161,19 @@ label.star:before {
   font-family: FontAwesome;
 }
 
+#emptyDbHeading {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 60px;
+	font-weight: bold;
+}
 
+#emptyDbMessage {
+	font-family: 'Cuprum', sans-serif;
+	font-size: 30px;
+}
+
+#eventName {
+	font-family: 'Cuprum', sans-serif;
+	font-size: 60px;
+	font-weight: bold;
+}
