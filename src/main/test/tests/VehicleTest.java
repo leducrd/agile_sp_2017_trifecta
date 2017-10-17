@@ -43,12 +43,12 @@ public class VehicleTest {
 			connection = DBUtility.createConnection();
 			statement = connection.createStatement();
 			
-			statement.executeUpdate("DROP TABLE IF EXISTS vehicle;");
-			statement.executeUpdate("CREATE TABLE vehicle (vehicleID integer primary key autoincrement, userID int, make text, model text, year int, color text, maxSeats int, boolean canSmoke);");
+			statement.executeUpdate("DROP TABLE IF EXISTS vehicles;");
+			statement.executeUpdate("CREATE TABLE vehicles (vehicleID integer primary key autoincrement, userID int, make text, model text, year int, color text, maxSeats int, canSmoke int);");
 			
 			dbm = connection.getMetaData();
 			
-			ResultSet tablesList = dbm.getTables(null, null, "vehicle", null);
+			ResultSet tablesList = dbm.getTables(null, null, "vehicles", null);
 			
 			assertThat(tablesList.next(), is(true));
 		
@@ -78,7 +78,7 @@ public class VehicleTest {
 			statement = connection.createStatement();
 			
 			statement.executeUpdate("DROP TABLE IF EXISTS vehicle;");
-			statement.executeUpdate("CREATE TABLE vehicle (vehicleID integer primary key autoincrement, userID int, make text, model text, year int, color text, maxSeats int, boolean canSmoke);");
+			statement.executeUpdate("CREATE TABLE vehicle (vehicleID integer primary key autoincrement, userID int, make text, model text, year int, color text, maxSeats int, canSmoke int);");
 			
 			// query1 = current vehicle table row count
 			ResultSet resultSet = statement.executeQuery("SELECT COUNT(*) AS rowCount FROM vehicle");
@@ -107,10 +107,10 @@ public class VehicleTest {
 	}
 	
 	@Test
-	void retrieveVehicleTest() throws VehicleDaoException {
+	public void retrieveVehicleTest() throws VehicleDaoException {
 		
 		// Create vehicle
-		final Vehicle vehicle1 = new Vehicle(4, "Acura", "Potato", 2013, "Pink", 4, true);
+		final Vehicle vehicle1 = new Vehicle(5, "Acura", "Potato", 2013, "Pink", 4, true);
 		
 		// Create vehicleDao object
 		final VehicleDao vehicleDao = new VehicleDaoImpl();

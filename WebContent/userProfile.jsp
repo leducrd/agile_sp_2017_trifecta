@@ -22,12 +22,18 @@
 				
 			        <img src="assets/images/profile_default.jpg" alt="default profile image" class="img-rounded"/>
 					<h1>${people.firstName}${people.lastName}</h1>
-					<p>UserID: ${people.userID} </p>
 			        <p>Phone: ${people.phoneNumber}</p>
 			        <p>Email: ${people.email}</p>
 			        <p>Password: ${people.password}</p>
 			        <p>User Type: ${people.userType}</p>
-			      
+			        
+			        <h1>Your Car</h1>
+					<p>Make: ${vehicle.make} </p>
+			        <p>Model: ${vehicle.model}</p>
+			        <p>Year: ${vehicle.year}</p>
+			        <p>Color: ${vehicle.color}</p>
+			        <p>Max Seats: ${vehicle.maxSeats}</p>
+			      	<p>Can Smoke?: ${vehicle.canSmoke }</p>
 			    <%-- </c:forEach> --%>		
 			
 			</div>

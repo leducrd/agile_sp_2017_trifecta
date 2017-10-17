@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import classes.AuthenticatedUser;
 import classes.Vehicle;
 import dao.VehicleDao;
 import util.DBUtility;
@@ -17,7 +16,7 @@ import util.DBUtility;
 public class VehicleDaoImpl implements VehicleDao {
 	
 	private static final String DROP_TABLE_VEHICLE = "DROP TABLE IF EXISTS vehicles;";
-	private static final String CREATE_TABLE_VEHICLE = "CREATE TABLE vehicles (carID integer primary key autoincrement, userID integer, make text, model text, year integer, color text, maxSeats integer, canSmoke boolean);";
+	private static final String CREATE_TABLE_VEHICLE = "CREATE TABLE vehicles (carID integer primary key autoincrement, userID integer, make text, model text, year integer, color text, maxSeats integer, canSmoke int);";
 	private static final String SELECT_ALL_FROM_VEHICLES = "SELECT * from vehicles;";
 	
 	@Override

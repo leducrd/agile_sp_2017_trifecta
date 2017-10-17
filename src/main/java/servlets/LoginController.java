@@ -10,10 +10,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import classes.AuthenticatedUser;
+import classes.Vehicle;
 import dao.AuthenticatedUserDao;
 import dao.VehicleDao;
 import impl.AuthenticatedUserDaoImpl;
 import impl.AuthenticatedUserException;
+import impl.VehicleDaoException;
 import impl.VehicleDaoImpl;
 
 /**
@@ -31,7 +33,7 @@ public class LoginController extends HttpServlet {
 		String target = null;
 		HttpSession session = request.getSession();
 		AuthenticatedUserDao authUser = new AuthenticatedUserDaoImpl();
-		//VehicleDao vehicleDao = new VehicleDaoImpl();
+		VehicleDao vehicleDao = new VehicleDaoImpl();
 		
 		try {
 			final String userName = request.getParameter("loginEmail");
@@ -40,12 +42,14 @@ public class LoginController extends HttpServlet {
 			AuthenticatedUser loggedInUser = authUser.retrieveUser(userName, password);
 			
 			//TODO Retrieve Vehicle
+			Vehicle vehicle = vehicleDao.retrieveVehicle(loggedInUser.getUserID());
 			
 			session.setAttribute("people", loggedInUser);
+			session.setAttribute("vehicle", vehicle);
 			
 			target = "userProfile.jsp";
 			
-		} catch (IndexOutOfBoundsException | AuthenticatedUserException e) {
+		} catch (IndexOutOfBoundsException | AuthenticatedUserException | VehicleDaoException e) {
 
 			e.printStackTrace();
 			request.setAttribute("message", "Sorry. We could not find an account matching those credientials. Please register or try logging in again.");
