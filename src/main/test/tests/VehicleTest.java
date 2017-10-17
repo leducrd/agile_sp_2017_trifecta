@@ -104,7 +104,10 @@ public class VehicleTest {
 		} finally {
 			DBUtility.closeConnection(connection, statement);
 		};
-		
+	}
+	
+	@Test
+	void retrieveVehicleTest() {
 		
 	}
 
