@@ -12,7 +12,9 @@ import util.DBUtility;
 public class VehicleDaoImpl implements VehicleDao {
 	
 	private static final String DROP_TABLE_VEHICLE = "DROP TABLE IF EXISTS vehicles;";
-	private static final String CREATE_TABLE_VEHICLE = "CREATE TABLE vehicle (carID integer primary key autoincrement, userID integer, make text, model text, year integer, color text, maxSeats integer, canSmoke boolean);";
+	//private static final String CREATE_TABLE_PEOPLE = "CREATE TABLE people (userID integer primary key autoincrement, LName text, FName text, Phone text, Email text, Password text, userType text);";	
+
+	private static final String CREATE_TABLE_VEHICLE = "CREATE TABLE vehicles (carID integer primary key autoincrement, userID integer, make text, model text, year integer, color text, maxSeats integer, canSmoke boolean);";
 	//private static final String SELECT_ALL_FROM_VEHICLE = "SELECT * from vehicle;";
 	
 	@Override
@@ -49,7 +51,7 @@ public class VehicleDaoImpl implements VehicleDao {
 		try {
 			connection = DBUtility.createConnection();
 			
-			final String sqlStatement = "INSERT INTO vehicle (userID, make, model, year, color, maxSeats, canSmoke) values (?,?,?,?,?,?,?);";
+			final String sqlStatement = "INSERT INTO vehicles (userID, make, model, year, color, maxSeats, canSmoke) values (?,?,?,?,?,?,?);";
 			
 			insertStatement = connection.prepareStatement(sqlStatement);
 			

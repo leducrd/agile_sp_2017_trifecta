@@ -91,15 +91,16 @@ public class AddPersonController extends HttpServlet {
 	    			  
 	    			  vehicleDao.insertVehicle(vehicle);
 	    			  
+	    			  request.setAttribute("vehicleMessage", "We've got the following car on file for you:" +
+		    				  	"<br>UserID: " + vehicle.getUserID() + 
+			    		  		"<br>Make: " + make + 
+			    		  		"<br>Model: " + model + 
+			    		  		"<br>Year: " + year +
+			    		  		"<br>Color: " + color +
+			    		  		"<br> Max Number of Seats: " + maxSeats +
+			    		  		"<br> Can Smoke in Car?: " + smokeValue);  
 	    		  }
 	    		  
-	    		  request.setAttribute("vehicleMessage", "We've got the following car on file for you:" +
-		    		  		"<br>Make: " + make + 
-		    		  		"<br>Model: " + model + 
-		    		  		"<br>Year: " + year +
-		    		  		"<br>Color: " + color +
-		    		  		"<br> Max Number of Seats: " + maxSeats +
-		    		  		"<br> Can Smoke in Car?: " + smokeValue);
 	    		  
 	    		  target = "success.jsp";
 	    	   
