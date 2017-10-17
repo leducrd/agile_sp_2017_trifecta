@@ -8,7 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import classes.Person;
 import classes.Ride;
 import dao.RideDao;
 import util.DBUtility;
