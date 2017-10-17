@@ -81,7 +81,7 @@ public class AddPersonController extends HttpServlet {
 	    			  
 	    			  boolean canSmoke = true;
 	    			  
-	    			  if (smokeValue == "No") {
+	    			  if (smokeValue.equalsIgnoreCase("No")) {
 	    				  canSmoke = false;
 	    			  }
 	    			  
