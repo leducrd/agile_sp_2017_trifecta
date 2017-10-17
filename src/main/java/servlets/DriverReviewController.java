@@ -31,18 +31,18 @@ import impl.DriverReviewDaoImpl;
 			HttpSession session = request.getSession();
 		      try{
 		    	  final String driverName = request.getParameter("driverName");
-		    	  final int rating = Integer.parseInt(request.getParameter("rating"));
+		    	  final int star = Integer.parseInt(request.getParameter("star"));
 		    	  final String review = request.getParameter("review");
 		    	 
 		    	  
 		    	  if(Strings.isNullOrEmpty(driverName) ||
-		    			  rating == 0 ||
+		    			  star == 0 ||
 		    			  Strings.isNullOrEmpty(review)) {
 		    		  request.setAttribute("message", "You must complete all fields to submit the form.");
 		    		  target = "error.jsp";
 		    	  }else{
 		    		  try{
-		    		  final DriverReview driverReview = new DriverReview(driverName, rating, review);
+		    		  final DriverReview driverReview = new DriverReview(driverName, star, review);
 		    		  final DriverReviewDao driverReviewDao = new DriverReviewDaoImpl();
 		    		  
 		    		  DriverReviewDao.insertDriverReview(driverReview);
