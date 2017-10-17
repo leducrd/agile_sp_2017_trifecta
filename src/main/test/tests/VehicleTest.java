@@ -109,6 +109,31 @@ public class VehicleTest {
 	@Test
 	void retrieveVehicleTest() {
 		
+		// Create vehicle
+		final Vehicle vehicle1 = new Vehicle(4, "Acura", "Potato", 2013, "Pink", 4, true);
+		
+		// Create vehicleDao object
+		final VehicleDao vehicleDao = new VehicleDaoImpl();
+		
+		// insert vehicle
+		try {
+			vehicleDao.insertVehicle(vehicle1);
+		} catch (VehicleDaoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		// retrieve vehicle
+		final Vehicle vehicle2 = vehicleDao.retrieveVehicle();
+		
+		// assert that
+		assertThat(vehicle2.getUserID(), is(vehicle1.getUserID()));
+		assertThat(vehicle2.getMake(), is(vehicle1.getMake()));
+		assertThat(vehicle2.getMake(), is(vehicle1.getMake()));
+		assertThat(vehicle2.getModel(), is(vehicle1.getModel()));
+		assertThat(vehicle2.getYear(), is(vehicle1.getYear()));
+		assertThat(vehicle2.getColor(), is(vehicle1.getColor()));
+		assertThat(vehicle2.isCanSmoke(), is(vehicle1.isCanSmoke()));
 	}
 
 }
