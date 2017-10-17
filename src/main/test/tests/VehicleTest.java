@@ -107,7 +107,7 @@ public class VehicleTest {
 	}
 	
 	@Test
-	void retrieveVehicleTest() {
+	void retrieveVehicleTest() throws VehicleDaoException {
 		
 		// Create vehicle
 		final Vehicle vehicle1 = new Vehicle(4, "Acura", "Potato", 2013, "Pink", 4, true);
@@ -124,7 +124,7 @@ public class VehicleTest {
 		}
 		
 		// retrieve vehicle
-		final Vehicle vehicle2 = vehicleDao.retrieveVehicle();
+		final Vehicle vehicle2 = vehicleDao.retrieveVehicle(vehicle1.getUserID());
 		
 		// assert that
 		assertThat(vehicle2.getUserID(), is(vehicle1.getUserID()));
