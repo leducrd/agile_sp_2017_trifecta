@@ -9,10 +9,18 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.common.base.Strings;
 
+import classes.AuthenticatedUser;
 import classes.Person;
+import classes.Vehicle;
+import dao.AuthenticatedUserDao;
 import dao.PersonDao;
+import dao.VehicleDao;
+import impl.AuthenticatedUserDaoImpl;
+import impl.AuthenticatedUserException;
 import impl.PersonDaoException;
 import impl.PersonDaoImpl;
+import impl.VehicleDaoException;
+import impl.VehicleDaoImpl;
 
 /**
  * Servlet implementation class AddPersonController
@@ -34,6 +42,13 @@ public class AddPersonController extends HttpServlet {
 	    	  final String email = request.getParameter("myEmail");
 	    	  final String password = request.getParameter("password");
 	    	  final String userType = request.getParameter("userType");
+	    	  
+	    	  final String make = request.getParameter("make");
+	    	  final String model = request.getParameter("model");
+	    	  final int year = Integer.parseInt(request.getParameter("year"));
+	    	  final String color = request.getParameter("color");
+	    	  final int maxSeats = Integer.parseInt(request.getParameter("maxSeats"));
+	    	  final String smokeValue = request.getParameter("canSmoke");
 	    	  
 	    	  
 	    	  
@@ -60,12 +75,46 @@ public class AddPersonController extends HttpServlet {
 	    		  
 	    		  //TODO: If Driver check box checked, run insertVehicle method.
 	    		  
+	    		  if(person.getUserType().contains("d")) {
+	    			  final AuthenticatedUserDao authUserDao = new AuthenticatedUserDaoImpl();
+	    			  final AuthenticatedUser authUser = authUserDao.retrieveUser(person.getEmail(), person.getPassword());
+	    			  
+	    			  boolean canSmoke = true;
+	    			  
+	    			  if (smokeValue == "No") {
+	    				  canSmoke = false;
+	    			  }
+	    			  
+	    			  final Vehicle vehicle = new Vehicle(authUser.getUserID(), make, model, year, color, maxSeats, canSmoke);
+	    			  
+	    			  final VehicleDao vehicleDao = new VehicleDaoImpl();
+	    			  
+	    			  vehicleDao.insertVehicle(vehicle);
+	    			  
+	    		  }
+	    		  
+	    		  request.setAttribute("vehicleMessage", "We've got the following car on file for you:" +
+		    		  		"<br>Make: " + make + 
+		    		  		"<br>Model: " + model + 
+		    		  		"<br>Year: " + year +
+		    		  		"<br>Color: " + color +
+		    		  		"<br> Max Number of Seats: " + maxSeats +
+		    		  		"<br> Can Smoke in Car?: " + smokeValue);
+	    		  
 	    		  target = "success.jsp";
 	    	   
 	    		   
-	    	   }catch (NumberFormatException e) {
+	    	   }catch (NumberFormatException | AuthenticatedUserException | VehicleDaoException e) {
 		   			e.printStackTrace();
-					request.setAttribute("message", "Error: You didn't enter in all the data.");
+		   			
+		   			if (e instanceof NumberFormatException) {
+		   				request.setAttribute("message", "Error: You didn't enter in all the data.");
+		   			} else if (e instanceof AuthenticatedUserException) {
+		   				request.setAttribute("message", "Error: We're sorry, an error occured while registering you. Please try again.");
+		   			} else if (e instanceof VehicleDaoException) {
+		   				request.setAttribute("message", "Error: Something went wrong with your car information. Please go back and try registering again.");
+		   			}
+					
 
 					target = "error.jsp";
 	    	   }
