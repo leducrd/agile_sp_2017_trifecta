@@ -8,4 +8,6 @@ public interface VehicleDao {
 	void createVehicleTable() throws VehicleDaoException;
 	
 	void insertVehicle(Vehicle vehicle) throws VehicleDaoException;
+	
+	Vehicle retrieveVehicle(int authUserID) throws VehicleDaoException;
 }
