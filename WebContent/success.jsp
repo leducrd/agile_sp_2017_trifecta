@@ -9,5 +9,6 @@
 	<body>
 		<h1>Success</h1>
 		<p>${message }</p>
+		<p>${vehicleMessage}</p>
 	</body>
 </html>
