@@ -28,7 +28,7 @@ import impl.DriverReviewDaoImpl;
 		 */
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			String target = null;
-			HttpSession session = request.getSession();
+//			HttpSession session = request.getSession();
 		      try{
 		    	  final String driverName = request.getParameter("driverName");
 		    	  final int rating = Integer.parseInt(request.getParameter("rating"));
@@ -45,11 +45,11 @@ import impl.DriverReviewDaoImpl;
 		    		  final DriverReview driverReview = new DriverReview(driverName, rating, review);
 		    		  final DriverReviewDao driverReviewDao = new DriverReviewDaoImpl();
 		    		  
-		    		  DriverReviewDao.insertDriverReview(driverReview);
-		    		  final List<DriverReview> driverReviews = driverReviewDao.retrieveDriverReview();
+		    		  driverReviewDao.insertDriverReview(driverReview);
+		    		  //final List<DriverReview> driverReviews = driverReviewDao.retrieveDriverReview();
 		  			
-		  			
-		  			session.setAttribute("driverReviews", driverReviews);
+		  			request.setAttribute("message", "Your review was sent to company and driver, thank you for taking the time and filling it out!");
+		  			//session.setAttribute("driverReviews", driverReviews);
 		  			
 		  			target = "success.jsp";
 		    	   
