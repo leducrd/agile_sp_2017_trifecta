@@ -12,6 +12,9 @@ import java.sql.Statement;
 import org.junit.Test;
 
 import classes.Vehicle;
+import dao.VehicleDao;
+import impl.VehicleDaoException;
+import impl.VehicleDaoImpl;
 import util.DBUtility;
 
 public class VehicleTest {
@@ -40,12 +43,12 @@ public class VehicleTest {
 			connection = DBUtility.createConnection();
 			statement = connection.createStatement();
 			
-			statement.executeUpdate("DROP TABLE IF EXISTS vehicle;");
-			statement.executeUpdate("CREATE TABLE vehicle (vehicleID integer primary key autoincrement, userID int, make text, model text, year int, color text, maxSeats int, boolean canSmoke);");
+			statement.executeUpdate("DROP TABLE IF EXISTS vehicles;");
+			statement.executeUpdate("CREATE TABLE vehicles (vehicleID integer primary key autoincrement, userID int, make text, model text, year int, color text, maxSeats int, canSmoke int);");
 			
 			dbm = connection.getMetaData();
 			
-			ResultSet tablesList = dbm.getTables(null, null, "vehicle", null);
+			ResultSet tablesList = dbm.getTables(null, null, "vehicles", null);
 			
 			assertThat(tablesList.next(), is(true));
 		
@@ -56,6 +59,81 @@ public class VehicleTest {
 			DBUtility.closeConnection(connection, statement);
 		}
 		
+	}
+	
+	@Test
+	public void insertVehicleTest() {
+
+		// Create a new vehicle
+		Vehicle car = new Vehicle(1, "Audi", "Nugget", 2008, "Pink", 4, true);
+		VehicleDao vehicleDao = new VehicleDaoImpl();
+		
+		// query1 = current vehicle table row count
+		
+		Connection connection = null;
+		Statement statement = null;
+		
+		try {
+			connection = DBUtility.createConnection();
+			statement = connection.createStatement();
+			
+			statement.executeUpdate("DROP TABLE IF EXISTS vehicle;");
+			statement.executeUpdate("CREATE TABLE vehicle (vehicleID integer primary key autoincrement, userID int, make text, model text, year int, color text, maxSeats int, canSmoke int);");
+			
+			// query1 = current vehicle table row count
+			ResultSet resultSet = statement.executeQuery("SELECT COUNT(*) AS rowCount FROM vehicle");
+			resultSet.next();
+			
+			int countBefore = resultSet.getInt("rowCount");
+			
+			// insertVehicle
+			vehicleDao.insertVehicle(car);
+			
+			// query2 = new vehicle table row count
+			resultSet = statement.executeQuery("SELECT COUNT(*) AS rowCount FROM vehicle");
+			resultSet.next();
+			
+			int countAfter = resultSet.getInt("rowCount");
+			
+			// assert that query2 = query1 + 1
+			assertThat(countAfter, is(countBefore + 1));
+			
+		} catch (SQLException | ClassNotFoundException | VehicleDaoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			DBUtility.closeConnection(connection, statement);
+		};
+	}
+	
+	@Test
+	public void retrieveVehicleTest() throws VehicleDaoException {
+		
+		// Create vehicle
+		final Vehicle vehicle1 = new Vehicle(5, "Acura", "Potato", 2013, "Pink", 4, true);
+		
+		// Create vehicleDao object
+		final VehicleDao vehicleDao = new VehicleDaoImpl();
+		
+		// insert vehicle
+		try {
+			vehicleDao.insertVehicle(vehicle1);
+		} catch (VehicleDaoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		// retrieve vehicle
+		final Vehicle vehicle2 = vehicleDao.retrieveVehicle(vehicle1.getUserID());
+		
+		// assert that
+		assertThat(vehicle2.getUserID(), is(vehicle1.getUserID()));
+		assertThat(vehicle2.getMake(), is(vehicle1.getMake()));
+		assertThat(vehicle2.getMake(), is(vehicle1.getMake()));
+		assertThat(vehicle2.getModel(), is(vehicle1.getModel()));
+		assertThat(vehicle2.getYear(), is(vehicle1.getYear()));
+		assertThat(vehicle2.getColor(), is(vehicle1.getColor()));
+		assertThat(vehicle2.isCanSmoke(), is(vehicle1.isCanSmoke()));
 	}
 
 }
