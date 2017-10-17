@@ -21,47 +21,24 @@
 				<c:otherwise>
 	 				<c:forEach items="${rides}" var="ride">
 						<div class="row">
-					    <div class="col">
-					     	<p id="eventName"> Event Name: ${ride.event}</p>
-						</div>
-					  </div>
+					     	<h3 id="eventName">${ride.event}</h3>
+					  	</div>
 					  <blockquote>
 						  <div class="row">
-						    <div class="col">
-						      Destination:
-						    </div>
-						    <div class="col-6">
-						      ${ride.destination}
-						    </div>
+						  	Destination: ${ride.destination}
 						  </div>
 						  
 						  <div class="row">
-						    <div class="col">
-						      Leave Time:
-						    </div>
-						    <div class="col-6">
-						      ${ride.leaveTime}
-						    </div>
+						  	Leave Time: ${ride.leaveTime}
 						  </div>
 						  
 						  <div class="row">
-						    <div class="col">
-						      Return Time:
-						    </div>
-						    <div class="col-6">
-						      ${ride.returnTime}
-						    </div>
+						  	Return Time: ${ride.returnTime}
 						  </div>
 						  
 						  <div class="row">
-						  	<div class="col">
-						    		Reason:
-						    </div>
-							<div class="col-6">
-								${ride.reason}
-							</div>
+						  	Reason: ${ride.reason}
 						  </div>
-						  <br>
 					  </blockquote>
 	  				</c:forEach>
 	  			</c:otherwise>

@@ -171,3 +171,9 @@ label.star:before {
 	font-family: 'Cuprum', sans-serif;
 	font-size: 30px;
 }
+
+#eventName {
+	font-family: 'Cuprum', sans-serif;
+	font-size: 60px;
+	font-weight: bold;
+}
