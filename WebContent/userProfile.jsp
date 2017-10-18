@@ -17,7 +17,7 @@
 			<%@ include file="includes/navigation.jsp" %>	
 		</nav>
 		
-		<div class="container-fluid text-center">
+		<div class="container-fluid text-center userprofilebg">
 				<%-- <c:forEach var="person" items="${people}"> --%>
 				
 			        <img src="assets/images/profile_default.jpg" alt="default profile image" class="img-rounded"/>
@@ -25,9 +25,23 @@
 			        <p>Phone: ${people.phoneNumber}</p>
 			        <p>Email: ${people.email}</p>
 			        <p>Password: ${people.password}</p>
-			        <p>User Type: ${people.userType}</p>
+			        <p>User Type:</p> ${people.userType}</p>
 			        
-			        <h1>Your Car</h1>
+			        <c:choose>
+							<c:when test="${empty people}">
+								<li><a href="register.jsp">Sign Up</a></li>								
+							</c:when>
+							<c:otherwise>
+								<li><a href="userProfile.jsp">Profile</a></li>
+								<li><a href="request.jsp">Request a Ride</a></li>
+								<li><a href="DriverReview.jsp">Driver Review</a></li>
+								<li><a>Log Out</a></li>
+							</c:otherwise>
+						</c:choose>
+			        
+			        
+			        
+			        <h3>Your Vehicle</h3>
 					<p>Make: ${vehicle.make} </p>
 			        <p>Model: ${vehicle.model}</p>
 			        <p>Year: ${vehicle.year}</p>

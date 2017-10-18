@@ -23,6 +23,12 @@ body {
 	text-shadow: 1px 1px 1px #000;
 }
 
+.userprofilebg {
+	width: 400px;
+	height: 155px;
+	background-color: rgba(0,0,0,0.5); 
+}
+
 .loginbg { 
 	width: 400px;
 	height: 155px;
