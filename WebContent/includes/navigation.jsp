@@ -24,7 +24,7 @@
 								<li><a href="userProfile.jsp">Profile</a></li>
 								<li><a href="request.jsp">Request a Ride</a></li>
 								<li><a href="DriverReview.jsp">Driver Review</a></li>
-								<li><a>Log Out</a></li>
+								<li><a href="logout.jsp">Log Out</a></li>
 							</c:otherwise>
 						</c:choose>
 						
