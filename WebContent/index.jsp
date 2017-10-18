@@ -19,24 +19,8 @@
 			<div class="container-fluid col-xs-12">
 				<div id="jumbotronContent" class="jumbotron text-center">	 
 					<h1>Not Yet<br>Carpool Service</h1> 
-					
-					
-					<c:choose>
-							<c:when test="${empty people}">
-								<a class="btn btn-lg" id="btn-style" href="#loginForm" roll="button" data-toggle="collapse">Login Now!</a>	
-								<%@ include file="includes/loginForm.jsp" %>							
-							</c:when>							
-					</c:choose>
-					
-					
-					
-						
-					
-					
-					
-					
-					
-					
+					<a class="btn btn-lg" id="btn-style" href="#loginForm" roll="button" data-toggle="collapse">Login Now!</a>	
+					<%@ include file="includes/loginForm.jsp" %>	
 				</div>
 			</div>
 		</section>
