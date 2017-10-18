@@ -23,6 +23,23 @@ body {
 	text-shadow: 1px 1px 1px #000;
 }
 
+.profilebg { 
+	width: 400px;
+	height: auto;
+	background-color: rgba(0,0,0,0.5); 
+	box-shadow: 2px 2px 2px #000;
+	margin: 5px auto;
+	padding: 10px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-o-border-radius: 10px;
+	-mox-border-radius: 10px;
+}
+
+.profiletext {
+	color: white;
+}
+
 .loginbg { 
 	width: 400px;
 	height: 155px;
